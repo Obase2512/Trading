@@ -1,10 +1,19 @@
 {
-  "cash_usdc": 50.0,
+  "cash_usdc": 40.0,
   "last_alerts": {},
-  "position": null,
+  "position": {
+    "entry_bid": 0.07825,
+    "entry_cost_usdc": 10.0,
+    "entry_execution_price": 0.07850481,
+    "entry_fee_usdc": 0.08919722497522287,
+    "entry_time": 1793132128.4977586,
+    "peak_net_pct": -100,
+    "product": "DOGE-USDC",
+    "units": 126.2445291571915
+  },
   "realized_pnl_usdc": 0.0,
   "starting_usdc": 50.0,
   "trades": [],
-  "updated_utc": "2026-10-27T15:33:41.612280+00:00",
+  "updated_utc": "2026-10-27T20:15:28.497759+00:00",
   "version": 1
 }
