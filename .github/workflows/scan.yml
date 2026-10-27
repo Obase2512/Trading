@@ -1,10 +1,10 @@
-name: Trading Sentinel research scan
+name: Trading Sentinel — discovery and paper alerts
 
 on:
   workflow_dispatch:
     inputs:
       test_sms:
-        description: Send one optional SMS test
+        description: Send one optional SMS connectivity test
         type: boolean
         default: false
   schedule:
@@ -20,15 +20,16 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
-      - run: python -m unittest discover -s tests -v
-      - name: Research scan (never trades)
+      - name: Validate signal logic
+        run: python -m unittest discover -s tests -v
+      - name: Research discovery (never trades)
         run: python scanner.py
         env:
           TEST_SMS: ${{ inputs.test_sms || 'false' }}
@@ -36,13 +37,23 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
           ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
-      - name: Save non-sensitive market snapshot
+      - name: Paper buy/sell watch (never trades)
+        if: inputs.test_sms != true
+        run: python paper_alerts.py
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PAPER_WATCHLIST: DOGE-USDC,PEPE-USDC,BONK-USDC
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
+          ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
+      - name: Save non-sensitive research and paper states
         if: inputs.test_sms != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state.json
+          git add data/state.json data/paper_state.json
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: save research snapshot'
+            git commit -m 'chore: refresh sentinel research and paper state'
             git push
           fi
