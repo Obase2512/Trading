@@ -7,13 +7,13 @@
     "entry_execution_price": 0.07850481,
     "entry_fee_usdc": 0.08919722497522287,
     "entry_time": 1793132128.4977586,
-    "peak_net_pct": -0.0015511665297340826,
+    "peak_net_pct": 0.09823523619794106,
     "product": "DOGE-USDC",
     "units": 126.2445291571915
   },
   "realized_pnl_usdc": 0.0,
   "starting_usdc": 50.0,
   "trades": [],
-  "updated_utc": "2026-10-28T17:27:11.153269+00:00",
+  "updated_utc": "2026-10-28T21:54:06.289088+00:00",
   "version": 1
 }
