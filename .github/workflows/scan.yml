@@ -4,11 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       test_telegram:
-        description: Send one Telegram test message (requires Telegram secrets)
-        type: boolean
-        default: false
-      test_sms:
-        description: Send one optional SMS connectivity test
+        description: Send a one-time Telegram connectivity test (manual only)
         type: boolean
         default: false
   schedule:
@@ -26,38 +22,29 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - name: Validate signal logic
         run: python -m unittest discover -s tests -v
-      - name: Research discovery (never trades)
+      - name: Discover assets (GitHub logs only; no Telegram)
         run: python scanner.py
         env:
           TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
-          TEST_SMS: ${{ inputs.test_sms || 'false' }}
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
-          ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      - name: Paper buy/sell watch (never trades)
-        if: inputs.test_sms != true && inputs.test_telegram != true
+      - name: Check paper BUY/SELL signals (Telegram only when qualified)
+        if: inputs.test_telegram != true
         run: python paper_alerts.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PAPER_WATCHLIST: DOGE-USDC,PEPE-USDC,BONK-USDC
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
-          ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Save non-sensitive research and paper states
-        if: inputs.test_sms != true && inputs.test_telegram != true
+        if: inputs.test_telegram != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
