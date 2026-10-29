@@ -10,7 +10,7 @@ The scheduled GitHub Actions workflow runs *approximately* every 30 minutes (Git
 2. `paper_alerts.py`: screens the watchlist `DOGE-USDC,PEPE-USDC,BONK-USDC` against public Coinbase quotes and the last 24 *closed* hourly candles.
 3. `signals.py`: produces a hypothetical **PAPER BUY WATCH** when all five basic conditions pass: upward short-term moving-average trend; 6h price change of +1% to +15%; positive 1h momentum (up to +6%); at least $100,000 estimated 24h turnover; quoted bid/ask spread no more than 0.8%.
 4. With a simulated position open, later scans issue a **PAPER SELL WATCH** after a modeled net +12% take-profit, -8% stop-loss, or trailing decline of 4 percentage points from a +6% gain.
-5. Optional SMS messages are sent through Twilio if its credentials are configured. Without them, alerts appear in GitHub Actions logs only. Optionally set an OpenAI API key for **descriptive commentary** when a paper entry occurs; LLM text does not authorize trades.
+5. Notifications go through **Telegram** when its bot token and chat ID are configured. Twilio SMS is an optional alternative; if both are configured, both receive alerts. Without a provider, alerts appear only in GitHub Actions logs. Optionally set an OpenAI API key for **descriptive commentary** when a paper entry occurs; LLM text does not authorize trades.
 
 **Crucial**: These threshold rules have **not been validated for predictive performance**. A 100/100 filter score is not a 100% success probability or an assessment of token contract safety. The algorithm does not check whale concentration, freeze/mint authority, liquidity locks, honeypot restrictions or rugs. The selected watchlist includes only Coinbase exchange-traded assets: DEX-only discoveries remain informational until further screening is developed.
 
@@ -40,6 +40,23 @@ python paper_alerts.py
 4. Open the latest workflow run. It should show both *Research discovery* and *Paper buy/sell watch* steps and then save `data/state.json` and `data/paper_state.json`.
 5. To inspect your *hypothetical* portfolio, open `data/paper_state.json` in GitHub after the run. It starts with 50 USDC and may open a simulated position only when all conditions pass. If no signal passes, that is expected.
 
+## Telegram alerts (recommended)
+
+Telegram bot messages use the Bot API and don't incur Twilio SMS charges.
+
+1. In Telegram, open the official [@BotFather](https://t.me/BotFather) bot, send \`/newbot\`, choose a name and unique username ending with \`bot\`.
+2. Open the **new bot**, press **Start**, and send **hello**. Telegram bots cannot initiate chats before you do.
+3. Run \`git pull origin main\` on your Mac, then in the Python virtual environment run \`python telegram_setup.py\`. The script privately prompts for the BotFather token (no echo or local storage), reads your bot's incoming messages, and displays your private numeric chat ID. If no chat ID is found, send your new bot another message and rerun the script.
+4. In your repository's **Settings → Secrets and variables → Actions**, choose **New repository secret** and save two secrets:
+   - \`TELEGRAM_BOT_TOKEN\`: token provided by BotFather (keep it secret).
+   - \`TELEGRAM_CHAT_ID\`: numeric private chat ID printed by the script.
+5. Go to [GitHub Actions](https://github.com/Obase2512/Trading/actions), select **Trading Sentinel — discovery and paper alerts**, click **Run workflow**, and check **test_telegram** (leave \`test_sms\` unchecked). A successful run sends **one Telegram test message** and does not execute scanning or trades.
+6. Leave Telegram notifications enabled on your phone. Subsequent scheduled runs will send **research and paper buy/sell alerts if a qualifying event is detected**. No event means no message.
+
+**Never paste the bot token into a chat, commit it in a public GitHub file, or share screenshots containing it.** The setup script does not store it. The bot has no trading credentials or permissions.
+
+If the Telegram test fails, verify both GitHub secrets, that you pressed **Start** in your bot, and the Actions run logs. The code deliberately suppresses Telegram tokens from API error messages.
+
 ## Optional SMS and AI explanation
 
 Add the following to **Settings → Secrets and variables → Actions → New repository secret** (never paste secrets into the public repo):
@@ -52,7 +69,7 @@ Add the following to **Settings → Secrets and variables → Actions → New re
 | `ALERT_TO_NUMBER` | Your destination phone number in +countrycode format |
 | `OPENAI_API_KEY` | Optional AI commentary; API usage billed separately |
 
-To test SMS after secrets are set, trigger a manual run with `test_sms` checked. Twilio U.S. A2P registration or other sender rules and charges may apply. If the text service fails, read GitHub logs; alerts are not automatically resent.
+To test Twilio SMS after secrets are set, trigger a manual run with `test_sms` checked. Telegram has its own `test_telegram` checkbox. Twilio U.S. A2P registration or other sender rules and charges may apply. If the text service fails, read GitHub logs; alerts are not automatically resent.
 
 To edit the paper watchlist, change `PAPER_WATCHLIST` in `.github/workflows/scan.yml`. Do not add a DEX-only pair; this feature uses Coinbase spot market data.
 
