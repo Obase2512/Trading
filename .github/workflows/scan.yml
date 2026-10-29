@@ -3,6 +3,10 @@ name: Trading Sentinel — discovery and paper alerts
 on:
   workflow_dispatch:
     inputs:
+      test_telegram:
+        description: Send one Telegram test message (requires Telegram secrets)
+        type: boolean
+        default: false
       test_sms:
         description: Send one optional SMS connectivity test
         type: boolean
@@ -32,13 +36,16 @@ jobs:
       - name: Research discovery (never trades)
         run: python scanner.py
         env:
+          TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
           TEST_SMS: ${{ inputs.test_sms || 'false' }}
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
           ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Paper buy/sell watch (never trades)
-        if: inputs.test_sms != true
+        if: inputs.test_sms != true && inputs.test_telegram != true
         run: python paper_alerts.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -47,8 +54,10 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
           ALERT_TO_NUMBER: ${{ secrets.ALERT_TO_NUMBER }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Save non-sensitive research and paper states
-        if: inputs.test_sms != true
+        if: inputs.test_sms != true && inputs.test_telegram != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
