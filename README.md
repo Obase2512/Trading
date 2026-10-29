@@ -44,13 +44,13 @@ python paper_alerts.py
 
 Telegram bot messages use the Bot API and don't incur Twilio SMS charges.
 
-1. In Telegram, open the official [@BotFather](https://t.me/BotFather) bot, send \`/newbot\`, choose a name and unique username ending with \`bot\`.
+1. In Telegram, open the official [@BotFather](https://t.me/BotFather) bot, send `/newbot`, choose a name and unique username ending with `bot`.
 2. Open the **new bot**, press **Start**, and send **hello**. Telegram bots cannot initiate chats before you do.
-3. Run \`git pull origin main\` on your Mac, then in the Python virtual environment run \`python telegram_setup.py\`. The script privately prompts for the BotFather token (no echo or local storage), reads your bot's incoming messages, and displays your private numeric chat ID. If no chat ID is found, send your new bot another message and rerun the script.
+3. Run `git pull origin main` on your Mac, then in the Python virtual environment run `python telegram_setup.py`. The script privately prompts for the BotFather token (no echo or local storage), reads your bot's incoming messages, and displays your private numeric chat ID. If no chat ID is found, send your new bot another message and rerun the script.
 4. In your repository's **Settings → Secrets and variables → Actions**, choose **New repository secret** and save two secrets:
-   - \`TELEGRAM_BOT_TOKEN\`: token provided by BotFather (keep it secret).
-   - \`TELEGRAM_CHAT_ID\`: numeric private chat ID printed by the script.
-5. Go to [GitHub Actions](https://github.com/Obase2512/Trading/actions), select **Trading Sentinel — discovery and paper alerts**, click **Run workflow**, and check **test_telegram** (leave \`test_sms\` unchecked). A successful run sends **one Telegram test message** and does not execute scanning or trades.
+   - `TELEGRAM_BOT_TOKEN`: token provided by BotFather (keep it secret).
+   - `TELEGRAM_CHAT_ID`: numeric private chat ID printed by the script.
+5. Go to [GitHub Actions](https://github.com/Obase2512/Trading/actions), select **Trading Sentinel — discovery and paper alerts**, click **Run workflow**, and check **test_telegram** (leave `test_sms` unchecked). A successful run sends **one Telegram test message** and does not execute scanning or trades.
 6. Leave Telegram notifications enabled on your phone. Subsequent scheduled runs will send **research and paper buy/sell alerts if a qualifying event is detected**. No event means no message.
 
 **Never paste the bot token into a chat, commit it in a public GitHub file, or share screenshots containing it.** The setup script does not store it. The bot has no trading credentials or permissions.
