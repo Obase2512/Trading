@@ -24,7 +24,7 @@ class NotificationRoutingTests(unittest.TestCase):
         telegram.assert_not_called()
         twilio.assert_not_called()
 
-    @patch("scanner.send_telegram")
+    @patch("scanner.send_telegram", side_effect=ValueError("Telegram configuration missing"))
     def test_partial_telegram_credentials_fail_closed(self, telegram):
         with patch.dict(os.environ, {"TELEGRAM_BOT_TOKEN": "test-token"}, clear=True):
             with self.assertRaises(ValueError):
