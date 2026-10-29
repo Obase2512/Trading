@@ -131,8 +131,10 @@ def run():
                     ". Token: "+address+". Contract and holders not checked. NOT A BUY SIGNAL.")
         except (requests.RequestException, ValueError, TypeError) as ex:
             logging.warning("DEX lookup skipped: %s",ex)
+    # Discovery results remain in GitHub logs and never generate Telegram messages.
+    # Telegram is reserved for actual paper buy/sell signals in paper_alerts.py.
     for alert in alerts:
-        notify(alert)
+        logging.info("DISCOVERY ONLY (no phone notification): %s", alert)
     state_file.parent.mkdir(parents=True,exist_ok=True)
     state_file.write_text(json.dumps({"initialized":True,"coinbase":listings,
         "seen":seen,"updated":time.time()},indent=2)+"\n")
