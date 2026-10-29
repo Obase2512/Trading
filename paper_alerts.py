@@ -12,7 +12,8 @@ from pathlib import Path
 
 import requests
 
-from scanner import get, notify
+from scanner import get
+from telegram_alerts import send_telegram
 from signals import (initial_state, fresh_candles, assess_market,
                      entry, assess_exit, stamp_state)
 
@@ -154,10 +155,17 @@ def run():
     stamp_state(state, now)
     save_state(state)  # Persist before notification attempt, preventing repeat entries.
     for msg in alerts:
+        # Only a new paper buy or an executed paper exit reaches this code path.
+        LOG.info("QUALIFYING PAPER BUY/SELL SIGNAL: %s", msg)
+        if not (os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")):
+            LOG.info("Telegram not configured; signal retained in GitHub logs only.")
+            continue
         try:
-            notify(msg)
-        except requests.RequestException as exc:
-            LOG.error("SMS failure (state saved; inspect logs): %s", exc)
+            send_telegram(msg)
+            LOG.info("Qualifying signal delivered to Telegram.")
+        except (RuntimeError, ValueError) as exc:
+            # No token or chat ID is logged; trading state is already saved.
+            LOG.error("Telegram notification failed: %s", exc)
     LOG.info("Paper cash %.2f USDC; open %s; total realized P&L %+.2f USDC. "
              "No actual orders.", state["cash_usdc"],
              state["position"]["product"] if state["position"] else "none",
