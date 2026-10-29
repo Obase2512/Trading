@@ -105,6 +105,23 @@ def save_state(state):
     temp.replace(STATE_PATH)
 
 
+def publish_signal_alerts(alerts):
+    """Telegram only for explicit simulated BUY or SELL events; silently skip the rest."""
+    for msg in alerts:
+        if not (msg.startswith("PAPER BUY WATCH ") or msg.startswith("PAPER SELL WATCH ")):
+            LOG.info("Non-trading research event suppressed from Telegram.")
+            continue
+        LOG.info("QUALIFYING PAPER BUY/SELL SIGNAL: %s", msg)
+        if not (os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")):
+            LOG.info("Telegram not configured; qualifying signal logged only.")
+            continue
+        try:
+            send_telegram(msg)
+            LOG.info("Qualifying signal delivered to Telegram.")
+        except (RuntimeError, ValueError) as exc:
+            LOG.error("Telegram notification failed: %s", exc)
+
+
 def run():
     now = time.time()
     state = load_state()
@@ -154,18 +171,7 @@ def run():
                     "Token safety NOT established. NO REAL ORDER.")
     stamp_state(state, now)
     save_state(state)  # Persist before notification attempt, preventing repeat entries.
-    for msg in alerts:
-        # Only a new paper buy or an executed paper exit reaches this code path.
-        LOG.info("QUALIFYING PAPER BUY/SELL SIGNAL: %s", msg)
-        if not (os.getenv("TELEGRAM_BOT_TOKEN") and os.getenv("TELEGRAM_CHAT_ID")):
-            LOG.info("Telegram not configured; signal retained in GitHub logs only.")
-            continue
-        try:
-            send_telegram(msg)
-            LOG.info("Qualifying signal delivered to Telegram.")
-        except (RuntimeError, ValueError) as exc:
-            # No token or chat ID is logged; trading state is already saved.
-            LOG.error("Telegram notification failed: %s", exc)
+    publish_signal_alerts(alerts)
     LOG.info("Paper cash %.2f USDC; open %s; total realized P&L %+.2f USDC. "
              "No actual orders.", state["cash_usdc"],
              state["position"]["product"] if state["position"] else "none",
