@@ -26,7 +26,8 @@ def coinbase():
                 and p.get("product_type") in ("SPOT",None)
                 and str(p.get("status", "online")).lower() == "online"
                 and not any(p.get(x) for x in ("trading_disabled","view_only","is_disabled"))):
-                found[base] = p.get("product_id")
+                if base not in found or p.get("quote_currency_id") == "USDC":
+                    found[base] = p.get("product_id")
         if len(products) < 250:
             break
     return found

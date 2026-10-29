@@ -1,75 +1,55 @@
-# Trading Sentinel — Meme Coin Research + Paper Buy/Sell Alerts
+# Trading Sentinel — 3-Coin Paper Trading + Telegram Alerts
 
-A **research-only** monitoring experiment using public Coinbase and DEX Screener market data. It does **not** buy or sell crypto, connect to your Coinbase account, or risk your real Coinbase funds.
+**Paper trading only. No Coinbase API keys, no exchange orders, no DEX purchases.**
+This app screens curated Coinbase exchange-listed meme-coin symbols using public candles and quotes. It uses deterministic price/volume rules, with optional AI commentary, not a validated predictive AI trading strategy.
 
-## What this version does
+## Portfolio (Version 2)
 
-The scheduled GitHub Actions workflow runs *approximately* every 30 minutes (GitHub cron jobs can be late or skipped):
+| Setting | Value |
+|---|---|
+| Target paper budget | **150 USDC** |
+| Maximum simultaneously open paper positions | **3 different coins** |
+| New paper entry amount | **50 USDC per coin**, fees included |
+| Simulated taker fee | **0.9% each side**, assumed |
+| Additional simulated slippage | **0.3% each side**, assumed |
+| Cumulative realized loss threshold | **-15 USDC stops new paper buys** |
+| Re-buy same coin after a paper exit | **6-hour cooldown** |
+| Actual Coinbase buys and sells | **DISABLED** |
 
-1. `scanner.py`: checks Coinbase's public spot catalog for newly detected exchange symbols and DEX Screener's **incomplete/promotional** token profile feeds. These are **unverified discovery alerts**, not buy signals.
-2. `paper_alerts.py`: screens the watchlist `DOGE-USDC,PEPE-USDC,BONK-USDC` against public Coinbase quotes and the last 24 *closed* hourly candles.
-3. `signals.py`: produces a hypothetical **PAPER BUY WATCH** when all five basic conditions pass: upward short-term moving-average trend; 6h price change of +1% to +15%; positive 1h momentum (up to +6%); at least $100,000 estimated 24h turnover; quoted bid/ask spread no more than 0.8%.
-4. With a simulated position open, later scans issue a **PAPER SELL WATCH** after a modeled net +12% take-profit, -8% stop-loss, or trailing decline of 4 percentage points from a +6% gain.
-5. **Telegram alerts are sent ONLY when the paper-trading engine opens a simulated position (PAPER BUY WATCH) or closes one on an exit rule (PAPER SELL WATCH).** Routine scans, incomplete matches, and new Coinbase/DEX discoveries never send Telegram messages. If Telegram is not configured, qualifying signals appear in GitHub Actions logs. An optional OpenAI API key adds descriptive commentary only; it does not authorize trades.
+### Preserving the earlier $50 test
 
-**Crucial**: These threshold rules have **not been validated for predictive performance**. A 100/100 filter score is not a 100% success probability or an assessment of token contract safety. The algorithm does not check whale concentration, freeze/mint authority, liquidity locks, honeypot restrictions or rugs. The selected watchlist includes only Coinbase exchange-traded assets: DEX-only discoveries remain informational until further screening is developed.
+The earlier paper account was Version 1 with a 50 USDC starting balance and possibly an outstanding 10 USDC simulated DOGE position. On its **first successful Version 2 scan**, the bot:
+1. Credits **100 USDC only to paper cash**, yielding a 150 USDC paper starting budget.
+2. Migrates the earlier single paper position without selling or resizing it.
+3. Preserves historical paper trades and realized P&L.
+4. Records the credit in a capital-additions ledger, and increases the version number to prevent the $100 from being added again.
 
-## Paper account (not linked to Coinbase)
+**Example:** $40 paper cash and an old $10 DOGE position become $140 paper cash and the same $10 position. Two additional $50 paper positions may open, leaving $40 cash. Once the older $10 position closes, a new $50 position can occupy its slot *if cash and market criteria permit*. The paper cash is entirely separate from your Coinbase wallet; funding Coinbase does not fund this simulation.
 
-- Initial simulated balance: **50 USDC** in `data/paper_state.json`.
-- Maximum simulated purchase: **10 USDC**, fees included.
-- One position at a time, no leverage.
-- Approximate market-entry/exit fees: **0.90% taker each side** (update if your actual tier changes).
-- Extra assumed slippage: **0.30% per side**; actual execution can be worse.
-- Stop new simulated entries at **10 USDC cumulative realized losses**.
-- Price-exit checks run **only when the workflow executes**, so a sharp crash can pass through a stop between checks. **This is NOT a reliable real-time stop-loss**.
-- GitHub commits paper-trade state to this **public repository**. It contains *hypothetical* orders only; never add account details or real positions here.
+## Research universe
 
-## Test the upgraded workflow
+The default curated set is DOGE, PEPE, BONK, SHIB, FLOKI, WIF, TURBO, MOG, BRETT, PENGU, POPCAT and FARTCOIN, **only where a currently identified eligible Coinbase spot USDC trading pair exists**. Unsupported and stale tickers are skipped.
 
-1. Run `git pull origin main` on your Mac, making sure you have no uncommitted changes before pulling.
-2. In your active virtual environment run:
+The catalog discovery step tracks changes in Coinbase Exchange assets and a partial/promoted DEX Screener feed. A brand-new token discovered on a DEX is **not automatically eligible** for simulated Coinbase trading. Likewise, a newly listed exchange meme token must be included in the curated symbol set (configurable via the PAPER_WATCHLIST environment variable) before buy rules are evaluated. This is **not** an exhaustive discovery system for all meme coin launches.
 
-```bash
-python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
-python paper_alerts.py
-```
+A candidate must pass all five entry filters: upward short-term moving-average trend; six-hour momentum from +1% to +15%; positive one-hour momentum no greater than +6%; at least $100,000 estimated turnover in the last 24 hours; and quoted spread at most 0.8%. A perfect filter score is **not** a probability of profit or token safety certification.
 
-3. From [GitHub Actions](https://github.com/Obase2512/Trading/actions), select **Trading Sentinel — discovery and paper alerts**, click **Run workflow**, and leave `test_telegram` unchecked.
-4. Open the latest workflow run. It should show both *Research discovery* and *Paper buy/sell watch* steps and then save `data/state.json` and `data/paper_state.json`.
-5. To inspect your *hypothetical* portfolio, open `data/paper_state.json` in GitHub after the run. It starts with 50 USDC and may open a simulated position only when all conditions pass. If no signal passes, that is expected.
+## Independent paper SELL WATCH conditions
 
-## Telegram alerts (recommended)
+Each open paper position is tracked independently; it may generate a SELL WATCH on a modeled **+12% net profit**, **-8% net loss**, or a **4-percentage-point decline after a +6% gain**. These thresholds include assumed fees and slippage. GitHub Actions runs approximately every 30 minutes but can be delayed, so these are **not guaranteed stop-losses**.
 
-Telegram bot notifications use the Bot API; no paid SMS provider is needed.
+## Telegram alerts
 
-1. In Telegram, open the official [@BotFather](https://t.me/BotFather) bot, send `/newbot`, choose a name and unique username ending with `bot`.
-2. Open the **new bot**, press **Start**, and send **hello**. Telegram bots cannot initiate chats before you do.
-3. Run `git pull origin main` on your Mac, then in the Python virtual environment run `python telegram_setup.py`. The script privately prompts for the BotFather token (no echo or local storage), reads your bot's incoming messages, and displays your private numeric chat ID. If no chat ID is found, send your new bot another message and rerun the script.
-4. In your repository's **Settings → Secrets and variables → Actions**, choose **New repository secret** and save two secrets:
-   - `TELEGRAM_BOT_TOKEN`: token provided by BotFather (keep it secret).
-   - `TELEGRAM_CHAT_ID`: numeric private chat ID printed by the script.
-5. Go to [GitHub Actions](https://github.com/Obase2512/Trading/actions), select **Trading Sentinel — discovery and paper alerts**, click **Run workflow**, and check **test_telegram** (the Telegram test is a separate manual option). A successful run sends **one Telegram test message** and does not execute scanning or trades.
-6. Leave Telegram notifications enabled on your phone. Scheduled runs send **only qualifying PAPER BUY WATCH or PAPER SELL WATCH messages**. Coin-discovery findings remain in GitHub logs; no qualifying trade signal means no Telegram message.
+Existing Telegram secrets (TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID) work unchanged. One paper BUY WATCH alert is produced for each newly simulated position; one SELL WATCH alert for each simulated exit. Multiple buy/sell messages can be sent in the same run. There are **no Telegram messages** for discovery-only coins, scans without qualifying events, or ordinary hold updates.
 
-**Never paste the bot token into a chat, commit it in a public GitHub file, or share screenshots containing it.** The setup script does not store it. The bot has no trading credentials or permissions.
+A manually selected test_telegram workflow option sends only one connectivity message, not a buy or sell signal.
 
-If the Telegram test fails, verify both GitHub secrets, that you pressed **Start** in your bot, and the Actions run logs. The code deliberately suppresses Telegram tokens from API error messages.
+## Run and verify
 
-## Optional AI explanations
+1. Open [Trading Sentinel Actions](https://github.com/Obase2512/Trading/actions/workflows/scan.yml).
+2. Choose **Run workflow**, branch **main**, leave **test_telegram unchecked**.
+3. After the first successful run, inspect [data/paper_state.json](https://github.com/Obase2512/Trading/blob/main/data/paper_state.json) to confirm **version 2**, starting balance **150**, and the **positions** mapping. The one-time paper credit happens on this run, not at code commit time.
+4. Subsequent checks are scheduled at roughly minutes 13 and 43 UTC; GitHub can delay them.
+5. Local check: git pull origin main; python -m unittest discover -s tests -v
 
-To add short AI commentary when a paper BUY WATCH occurs, save an `OPENAI_API_KEY` repository secret under **Settings → Secrets and variables → Actions**. This feature is optional and may incur API usage charges. AI commentary only explains measured market data; it does not override deterministic trading rules or assess token security.
-
-There is **no SMS subscription**. Only the two Telegram secrets are necessary for phone alerts. The manual **test_telegram** checkbox intentionally sends one connectivity test message and does not trigger paper trades.
-
-To edit the paper watchlist, change `PAPER_WATCHLIST` in `.github/workflows/scan.yml`. Do not add a DEX-only pair; this feature uses Coinbase spot market data.
-
-## Next development goals
-
-1. Strengthen contract/holder/security risk checks before suggesting *any real trade*.
-2. Record and assess dozens of hypothetical trades, including alternative outcomes, total fees and missed signals.
-3. Improve monitoring reliability, state storage, and Telegram delivery; consider a continuously running service for time-sensitive exits.
-4. Only if warranted, consider *manually approved* live trades with strict limits. Never deploy real trading API credentials into this project during testing.
-
-Sources: [Coinbase public market-data API](https://docs.cdp.coinbase.com/api-reference/advanced-trade-api/rest-api/public/get-public-product-candles), [DEX Screener API](https://docs.dexscreener.com/api/reference), [GitHub scheduled workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+**Risk:** The engine does not audit token contracts, insider/holder concentration, liquidity locks, or honeypots. Fee/slippage assumptions are not a price guarantee. Monitor paper results over many trades before ever contemplating live trading. Never publish Coinbase keys, wallet secrets, or Telegram tokens in this public repository.
