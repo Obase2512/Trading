@@ -1,6 +1,7 @@
 import json, os, time, logging
 from pathlib import Path
 import requests
+from telegram_alerts import send_telegram
 
 logging.basicConfig(level=logging.INFO)
 state_file = Path("data/state.json")
@@ -62,21 +63,43 @@ def candidate(chain, address, pairs):
         "chain":chain,"address":address,"age_h":round(age,1),"liquidity":round(liq),
         "volume_24h":round(vol),"url":p.get("url","")}
 
-def notify(msg):
-    logging.info("RESEARCH ALERT: %s", msg)
-    keys = ("TWILIO_ACCOUNT_SID","TWILIO_AUTH_TOKEN","TWILIO_FROM_NUMBER","ALERT_TO_NUMBER")
+def send_twilio(msg):
+    keys = ("TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN", "TWILIO_FROM_NUMBER", "ALERT_TO_NUMBER")
     if not all(os.getenv(x) for x in keys):
-        logging.info("SMS not configured; logged only")
-        return
+        raise ValueError("Twilio secrets are incomplete.")
     sid = os.environ["TWILIO_ACCOUNT_SID"]
-    r = requests.post("https://api.twilio.com/2010-04-01/Accounts/"+sid+"/Messages.json",
-        auth=(sid,os.environ["TWILIO_AUTH_TOKEN"]),data={"From":os.environ["TWILIO_FROM_NUMBER"],
-        "To":os.environ["ALERT_TO_NUMBER"],"Body":msg},timeout=20)
+    r = requests.post("https://api.twilio.com/2010-04-01/Accounts/" + sid + "/Messages.json",
+        auth=(sid, os.environ["TWILIO_AUTH_TOKEN"]),
+        data={"From": os.environ["TWILIO_FROM_NUMBER"],
+              "To": os.environ["ALERT_TO_NUMBER"], "Body": msg},
+        timeout=20)
     r.raise_for_status()
 
+
+def notify(msg):
+    logging.info("RESEARCH/PAPER ALERT: %s", msg)
+    telegram_vars = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")
+    twilio_vars = ("TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN", "TWILIO_FROM_NUMBER", "ALERT_TO_NUMBER")
+    telegram_configured = any(os.getenv(k) for k in telegram_vars)
+    twilio_configured = any(os.getenv(k) for k in twilio_vars)
+    if telegram_configured:
+        send_telegram(msg)
+        logging.info("Telegram notification delivered.")
+    if twilio_configured:
+        send_twilio(msg)
+        logging.info("Twilio notification delivered.")
+    if not (telegram_configured or twilio_configured):
+        logging.info("No notification provider configured; alert logged only.")
+
+
 def run():
+    if os.getenv("TEST_TELEGRAM") == "true":
+        send_telegram("Trading Sentinel Telegram test successful. Research and paper alerts only; no real orders.")
+        logging.info("Telegram delivery test succeeded.")
+        return
     if os.getenv("TEST_SMS") == "true":
-        notify("Trading Sentinel test. This is not a buy recommendation.")
+        send_twilio("Trading Sentinel Twilio test. This is not a buy recommendation.")
+        logging.info("Twilio delivery test succeeded.")
         return
     prior = json.loads(state_file.read_text()) if state_file.exists() else {"initialized":False,"coinbase":{},"seen":{}}
     listings = coinbase()
