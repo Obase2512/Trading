@@ -5,32 +5,32 @@
       "reason": "One-time paper-only budget increase (50 to 150 USDC)"
     }
   ],
-  "cash_usdc": 90.0,
-  "positions": {
-    "DOGE-USDC": {
-      "entry_bid": 0.07825,
-      "entry_cost_usdc": 10.0,
-      "entry_execution_price": 0.07850481,
-      "entry_fee_usdc": 0.08919722497522287,
-      "entry_time": 1793132128.4977586,
-      "peak_net_pct": 0.09823523619794106,
-      "product": "DOGE-USDC",
-      "units": 126.2445291571915
-    },
-    "FLOKI-USDC": {
-      "entry_bid": 2.309e-05,
-      "entry_cost_usdc": 50.0,
-      "entry_execution_price": 2.3189359999999996e-05,
-      "entry_fee_usdc": 0.4459861248761072,
-      "entry_time": 1793306263.54069,
-      "peak_net_pct": -100.0,
-      "product": "FLOKI-USDC",
-      "units": 2136928.913739918
-    }
-  },
-  "realized_pnl_usdc": 0.0,
+  "cash_usdc": 144.90179631,
+  "positions": {},
+  "realized_pnl_usdc": -5.09820369,
   "starting_usdc": 150.0,
-  "trades": [],
-  "updated_utc": "2026-10-29T20:37:43.540690+00:00",
+  "trades": [
+    {
+      "entry_cost_usdc": 10.0,
+      "entry_time": 1793132128.4977586,
+      "exit_proceeds_usdc": 9.106757,
+      "exit_time": 1793319896.5793986,
+      "pnl_pct": -8.93,
+      "pnl_usdc": -0.893243,
+      "product": "DOGE-USDC",
+      "reason": "modeled stop-loss (-8% net)"
+    },
+    {
+      "entry_cost_usdc": 50.0,
+      "entry_time": 1793306263.54069,
+      "exit_proceeds_usdc": 45.79504,
+      "exit_time": 1793319896.5793986,
+      "pnl_pct": -8.41,
+      "pnl_usdc": -4.20496,
+      "product": "FLOKI-USDC",
+      "reason": "modeled stop-loss (-8% net)"
+    }
+  ],
+  "updated_utc": "2026-10-30T00:24:56.579399+00:00",
   "version": 2
 }
