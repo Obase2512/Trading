@@ -13,7 +13,7 @@
       "entry_execution_price": 2.3851339999999996e-05,
       "entry_fee_usdc": 0.4459861248761072,
       "entry_time": 1793367403.8445404,
-      "peak_net_pct": -100.0,
+      "peak_net_pct": -1.919874472079186,
       "product": "FLOKI-USDC",
       "units": 2077619.7008270354
     },
@@ -23,7 +23,7 @@
       "entry_execution_price": 5.165449999999999e-06,
       "entry_fee_usdc": 0.4459861248761072,
       "entry_time": 1793367403.8445404,
-      "peak_net_pct": -100.0,
+      "peak_net_pct": -5.404597354222684,
       "product": "PEPE-USDC",
       "units": 9593358.540906195
     }
@@ -52,6 +52,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-10-30T13:36:43.844540+00:00",
+  "updated_utc": "2026-10-30T18:52:46.757625+00:00",
   "version": 2
 }
