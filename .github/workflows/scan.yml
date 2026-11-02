@@ -1,6 +1,8 @@
 name: Trading Sentinel — discovery and paper alerts
 
 on:
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       test_telegram:
@@ -30,17 +32,18 @@ jobs:
       - name: Validate signal logic
         run: python -m unittest discover -s tests -v
       - name: Discover assets (GitHub logs only; no Telegram)
+        if: github.event_name != 'pull_request'
         run: python scanner.py
         env:
           TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Research newly launched DEX pools (no Telegram or trades)
-        if: inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && inputs.test_telegram != true
         continue-on-error: true
         run: python new_launch_radar.py
       - name: Check paper BUY/SELL signals (Telegram only when qualified)
-        if: inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && inputs.test_telegram != true
         run: python paper_alerts.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -48,7 +51,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Save non-sensitive research and paper states
-        if: inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && inputs.test_telegram != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
