@@ -35,6 +35,10 @@ jobs:
           TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Research newly launched DEX pools (no Telegram or trades)
+        if: inputs.test_telegram != true
+        continue-on-error: true
+        run: python new_launch_radar.py
       - name: Check paper BUY/SELL signals (Telegram only when qualified)
         if: inputs.test_telegram != true
         run: python paper_alerts.py
@@ -48,7 +52,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state.json data/paper_state.json
+          git add data/state.json data/paper_state.json data/new_launch_radar.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh sentinel research and paper state'
             git push
