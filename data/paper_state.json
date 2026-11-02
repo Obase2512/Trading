@@ -5,7 +5,7 @@
       "reason": "One-time paper-only budget increase (50 to 150 USDC)"
     }
   ],
-  "cash_usdc": 44.90179631,
+  "cash_usdc": 90.20901321,
   "positions": {
     "FLOKI-USDC": {
       "entry_bid": 2.375e-05,
@@ -16,19 +16,9 @@
       "peak_net_pct": -1.8377646976732387,
       "product": "FLOKI-USDC",
       "units": 2077619.7008270354
-    },
-    "PEPE-USDC": {
-      "entry_bid": 5.14e-06,
-      "entry_cost_usdc": 50.0,
-      "entry_execution_price": 5.165449999999999e-06,
-      "entry_fee_usdc": 0.4459861248761072,
-      "entry_time": 1793367403.8445404,
-      "peak_net_pct": -4.456747628313085,
-      "product": "PEPE-USDC",
-      "units": 9593358.540906195
     }
   },
-  "realized_pnl_usdc": -5.09820369,
+  "realized_pnl_usdc": -9.79098679,
   "starting_usdc": 150.0,
   "trades": [
     {
@@ -50,8 +40,18 @@
       "pnl_usdc": -4.20496,
       "product": "FLOKI-USDC",
       "reason": "modeled stop-loss (-8% net)"
+    },
+    {
+      "entry_cost_usdc": 50.0,
+      "entry_time": 1793367403.8445404,
+      "exit_proceeds_usdc": 45.307217,
+      "exit_time": 1793605270.3763967,
+      "pnl_pct": -9.39,
+      "pnl_usdc": -4.692783,
+      "product": "PEPE-USDC",
+      "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-02T00:48:54.966298+00:00",
+  "updated_utc": "2026-11-02T07:41:10.376397+00:00",
   "version": 2
 }
