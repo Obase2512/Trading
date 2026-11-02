@@ -26,6 +26,20 @@ The earlier paper account was Version 1 with a 50 USDC starting balance and poss
 
 **Example:** $40 paper cash and an old $10 DOGE position become $140 paper cash and the same $10 position. Two additional $50 paper positions may open, leaving $40 cash. Once the older $10 position closes, a new $50 position can occupy its slot *if cash and market criteria permit*. The paper cash is entirely separate from your Coinbase wallet; funding Coinbase does not fund this simulation.
 
+## New-launch radar: Solana and Base (research-only)
+
+**Focus:** catch candidate newly created DEX trading pools *before* most tokens would reach centralized exchanges.
+
+- Public source: [GeckoTerminal new-pools API](https://api.geckoterminal.com/docs/index.html), paginated for **Solana** and **Base** on each scheduled scan. DEX Screener's existing profile/boost discovery remains available, but is not treated as a complete source of newly launched tokens.
+- Source coverage is incomplete: the first three pages per network are scanned each run; newly created pools may disappear from these pages quickly, and a new pool may contain an old token. This is **not exhaustive tracking of every newly minted meme coin**.
+- The scanner filters for pool age **5 minutes to 72 hours**, at least **$75,000 measured liquidity**, **$150,000 recent 24-hour volume**, and at least **60 buys / 30 sells**. It rejects very extreme 24-hour volume-to-liquidity ratios.
+- A *research-priority* score considers liquidity, trading activity, age, turnover, price changes and a simple meme-theme **name hint**. It is **not a confidence score, profit forecast or verified meme classification**. Token symbols and names can be copied by scammers.
+- Candidates appear in the GitHub Actions step **Research newly launched DEX pools** and in [data/new_launch_radar.json](https://github.com/Obase2512/Trading/blob/main/data/new_launch_radar.json). The JSON includes token and pool addresses (do not rely on symbols alone), age, measured volume, liquidity, buying/selling transactions and provider links.
+- No candidate is automatically promoted to a Coinbase paper-trade watchlist, and **no Telegram message is sent merely because a new pool qualifies for research**. Your Telegram-only-on-paper-BUY/SELL preference remains unchanged.
+- Most important: this radar **does not yet check mint/freeze authority, LP locks, holder/creator concentration, wash-trading, contract traps, honeypots or real exit liquidity**. No DEX buy/sell simulator is active. Before using radar findings as buy signals, build a chain-specific risk verification stage, verified pool-pricing/execution simulation, separate paper position ledger and tested exits.
+
+**Watchlist nuance:** early launches on a DEX cannot automatically be bought on Coinbase. Our currently active $50 simulated trades are still **Coinbase USDC pairs**; the $150 paper budget and three-position cap are unchanged.
+
 ## Research universe
 
 The default curated set is DOGE, PEPE, BONK, SHIB, FLOKI, WIF, TURBO, MOG, BRETT, PENGU, POPCAT and FARTCOIN, **only where a currently identified eligible Coinbase spot USDC trading pair exists**. Unsupported and stale tickers are skipped.

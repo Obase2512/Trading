@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "updated_utc": "",
+  "source": "GeckoTerminal new_pools public API (Solana and Base)",
+  "coverage": "First scan pending. Recent pools only; not exhaustive.",
+  "scanned_pool_rows": 0,
+  "successful_pages": 0,
+  "errors": [],
+  "candidates": [],
+  "seen": {},
+  "disclaimer": "Unverified research candidates; NOT BUY SIGNALS. No contract, holder, or liquidity-lock security verification."
+}
