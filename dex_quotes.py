@@ -27,6 +27,8 @@ MAX_ROUND_TRIP_LOSS = 0.15
 # proves token account creation cost, priority fees, RPC landing, or gas USD.
 GAS_BUFFER_USDC = {"solana": 0.40, "base": 1.00}
 
+_LAST_JUPITER_KEYLESS_CALL = 0.0
+
 
 def _atomic(value):
     if isinstance(value, bool) or not isinstance(value, (str, int)):
@@ -66,10 +68,18 @@ def _http_get(url, params, headers, requester=None):
 
 
 def _solana_quote(input_mint, output_mint, amount, requester=None):
+    global _LAST_JUPITER_KEYLESS_CALL
     headers = {"Accept": "application/json"}
     api_key = os.getenv("JUPITER_API_KEY", "").strip()
     if api_key:
         headers["x-api-key"] = api_key
+    elif requester is None:
+        # Limit consecutive keyless requests ACROSS candidate checks, not
+        # only the two calls inside a single preview (public quota: 0.5 rps).
+        elapsed = time.monotonic() - _LAST_JUPITER_KEYLESS_CALL
+        if _LAST_JUPITER_KEYLESS_CALL and elapsed < 2.1:
+            time.sleep(2.1 - elapsed)
+        _LAST_JUPITER_KEYLESS_CALL = time.monotonic()
     data = _http_get(JUPITER, {
         "inputMint": input_mint, "outputMint": output_mint,
         "amount": str(amount),
