@@ -141,6 +141,11 @@ def run_once(now=None, risk_fn=None, price_fn=None, radar_path=None,
     source = json.loads(radar_path.read_text())
     if source.get("version") != 1 or not isinstance(source.get("candidates"), list):
         raise ValueError("Invalid new-launch radar input")
+    try:
+        source_time = datetime.fromisoformat(source["updated_utc"].replace("Z", "+00:00")).timestamp()
+        radar_fresh = -120 <= now - source_time <= 7200
+    except (KeyError, TypeError, ValueError, OverflowError):
+        radar_fresh = False
 
     state = validate(json.loads(state_path.read_text())) if state_path.exists() else initial_state()
     events = []
@@ -190,7 +195,10 @@ def run_once(now=None, risk_fn=None, price_fn=None, radar_path=None,
     # Separate account used to test DEX heuristics vs existing Coinbase system.
     occupied_tokens = {(p["network"], p["token_address"].lower())
                        for p in state["positions"].values()}
-    candidates = sorted((x for x in source["candidates"] if isinstance(x, dict)),
+    if not radar_fresh:
+        LOG.warning("Radar is stale or undated. No NEW shadow entry; continuing open-position marks.")
+    candidates = sorted((x for x in source["candidates"] if isinstance(x, dict))
+                        if radar_fresh else [],
                         key=lambda x: (x.get("network") != "solana",
                                        -_number(x.get("research_priority_score"))
                                        if _number(x.get("research_priority_score")) else 0))
@@ -217,7 +225,10 @@ def run_once(now=None, risk_fn=None, price_fn=None, radar_path=None,
                 or (network, address.lower()) in occupied_tokens
                 or state["cash_usdc"] < BET):
             continue
-        if any(t.get("pool_key") == key and
+        if state["realized_pnl_usdc"] <= -15:
+            continue
+        if any(t.get("network") == network and
+               t.get("token_address", "").lower() == address.lower() and
                0 <= now - t.get("exit_time", 0) < COOLDOWN_SECONDS for t in state["trades"]):
             continue
         try:
