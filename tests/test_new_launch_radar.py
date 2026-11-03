@@ -119,5 +119,60 @@ class LaunchRadarTests(unittest.TestCase):
         self.assertEqual(len(result["candidates"]), 1)
 
 
+
+    def test_watch_lead_surfaces_early_pool_below_strict_trade_filters(self):
+        p = sample_pool(minutes_old=3, liquidity=25_000, volume=21_000,
+                        buys=12, sells=8)
+        self.assertIsNone(radar.parse_pool(p, "solana", NOW))
+        lead = radar.parse_watch_lead(p, "solana", NOW)
+        self.assertIsNotNone(lead)
+        self.assertEqual(lead["status"], "UNVERIFIED_WATCH_ONLY")
+        self.assertFalse(lead["eligible_for_buy_alert"])
+        result = radar.collect(now=NOW,
+                               fetcher=lambda network, page:
+                               [p] if network == "solana" and page == 1 else [])
+        self.assertEqual(len(result["candidates"]), 0)
+        self.assertEqual(len(result["watch_leads"]), 1)
+        self.assertTrue(result["coverage_complete"])
+
+    def test_paging_delay_applied_without_slowing_offline_test(self):
+        calls = []
+        def fetching(network, page):
+            calls.append((network, page))
+            return []
+        delays = []
+        x = radar.collect(now=NOW, fetcher=fetching, sleeper=lambda sec: delays.append(sec),
+                          page_gap_seconds=2.1)
+        self.assertEqual(x["successful_pages"], 6)
+        self.assertEqual(len(delays), 5)
+        self.assertEqual(calls[0], ("solana", 1))
+        self.assertEqual(x["pages_by_network"], {"solana": 3, "base": 3})
+
+    def test_rate_limit_retries_honor_retry_after_bounded(self):
+        retry = MagicMock()
+        retry.status_code = 429
+        retry.headers = {"Retry-After": "3"}
+        ok = MagicMock()
+        ok.status_code = 200
+        ok.json.return_value = {"data": [sample_pool()]}
+        requester = MagicMock(side_effect=[retry, ok])
+        delays = []
+        x = radar.fetch_new_pools("solana", 1, requester=requester,
+                                  sleeper=lambda secs: delays.append(secs))
+        self.assertEqual(len(x), 1)
+        self.assertEqual(delays, [3.0])
+        self.assertEqual(requester.call_count, 2)
+
+    def test_repeated_429_cannot_claim_full_coverage(self):
+        no = MagicMock()
+        no.status_code = 429
+        no.headers = {}
+        no.raise_for_status.side_effect = requests.HTTPError("429")
+        req = MagicMock(return_value=no)
+        with self.assertRaises(requests.HTTPError):
+            radar.fetch_new_pools("solana", 1, requester=req,
+                                  sleeper=lambda _: None)
+        self.assertEqual(req.call_count, 3)
+
 if __name__ == "__main__":
     unittest.main()
