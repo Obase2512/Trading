@@ -47,7 +47,7 @@ def good_buy(network, token, amount):
 def good_sale(network, token, raw_amount):
     return {"network": network, "token_address": token,
             "verified": "INDICATIVE_SELL_ROUTE_ONLY", "execution_guaranteed": False,
-            "quoted_net_usdc": 55.0}
+            "quoted_net_usdc": 65.0}
 
 
 class ShadowTests(unittest.TestCase):
@@ -118,8 +118,8 @@ class ShadowTests(unittest.TestCase):
             self.run_case(d)
             state, _, events = self.run_case(d, sale=good_sale, now=NOW + 1800)
             self.assertEqual(len(state["trades"]), 1)
-            self.assertEqual(state["cash_usdc"], 155)
-            self.assertEqual(state["trades"][0]["pnl_usdc"], 5)
+            self.assertEqual(state["cash_usdc"], 165)
+            self.assertEqual(state["trades"][0]["pnl_usdc"], 15)
             self.assertIn("NOT an executable sale", state["trades"][0]["execution"])
             self.assertEqual(len(events), 1)
 
