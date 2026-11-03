@@ -10,7 +10,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '13,43 * * * *'
+    - cron: '7,17,27,37,47,57 * * * *'  # ~10m target; GH Actions may delay/skip
 
 permissions:
   contents: write
@@ -48,6 +48,8 @@ jobs:
         run: python dex_shadow.py
         env:
           GOPLUS_ACCESS_TOKEN: ${{ secrets.GOPLUS_ACCESS_TOKEN }}
+          JUPITER_API_KEY: ${{ secrets.JUPITER_API_KEY }}
+          ZEROX_API_KEY: ${{ secrets.ZEROX_API_KEY }}
       - name: Check paper BUY/SELL signals (Telegram only when qualified)
         if: github.event_name != 'pull_request' && inputs.test_telegram != true
         run: python paper_alerts.py
