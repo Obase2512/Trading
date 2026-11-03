@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "strategy": "DEX research SHADOW, separate comparative $150 scenario",
+  "starting_usdc": 150,
+  "cash_usdc": 150,
+  "positions": {},
+  "trades": [],
+  "realized_pnl_usdc": 0,
+  "updated_utc": "",
+  "warnings": [
+    "NOT the Coinbase paper balance; do not sum these budgets.",
+    "Public pool marks are not executable bid/ask quotes.",
+    "Failure to sell, price impact, fake volume, and rugs may exceed modeled losses."
+  ]
+}
