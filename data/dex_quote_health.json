@@ -1,14 +1,20 @@
 {
-  "updated_utc": "",
-  "mode": "READ_ONLY_ROUTE_HEALTH_CHECK",
   "amount_usdc": 50,
+  "mode": "READ_ONLY_ROUTE_HEALTH_CHECK",
+  "note": "Reference-token round trip is a routing health test ONLY; does not certify a new meme token is safe, routable or sellable.",
   "status": {
-    "solana": {
-      "status": "not_checked"
-    },
     "base": {
-      "status": "not_checked"
+      "reason": "ZEROX_API_KEY absent",
+      "status": "not_configured"
+    },
+    "solana": {
+      "estimated_gas_buffer_usdc_each_side": 0.4,
+      "execution_guaranteed": false,
+      "provider_buy": "Jupiter Swap V2 indicative",
+      "provider_sell": "Jupiter Swap V2 indicative",
+      "quoted_roundtrip_loss_pct": 0.03,
+      "status": "ok"
     }
   },
-  "note": "No live provider checks run yet. This is not a trading signal."
+  "updated_utc": "2026-11-03T05:07:36.162446+00:00"
 }

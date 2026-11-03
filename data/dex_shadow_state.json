@@ -3,13 +3,14 @@
   "positions": {},
   "realized_pnl_usdc": 0,
   "starting_usdc": 150,
-  "strategy": "DEX research SHADOW, separate comparative $150 scenario",
+  "strategy": "DEX routed-quote SHADOW, legacy mark positions retained",
   "trades": [],
-  "updated_utc": "2026-11-03T04:27:10.054164+00:00",
-  "version": 1,
+  "updated_utc": "2026-11-03T05:07:38.998863+00:00",
+  "version": 2,
   "warnings": [
     "NOT the Coinbase paper balance; do not sum these budgets.",
     "Public pool marks are not executable bid/ask quotes.",
-    "Failure to sell, price impact, fake volume, and rugs may exceed modeled losses."
+    "Failure to sell, price impact, fake volume, and rugs may exceed modeled losses.",
+    "Legacy mark-price positions cannot be sold with new route model without atomic units."
   ]
 }

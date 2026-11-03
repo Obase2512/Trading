@@ -1,7 +1,7 @@
 {
-  "disclaimer": "Observed_pass is NOT proof of token safety or sellability. Shadow results use public marks, NOT real swap quotes. NEVER place actual trades on this evidence alone.",
-  "mode": "PRELIMINARY ONLY",
-  "provider": "GoPlus read-only",
+  "disclaimer": "No wallet, signing, actual gas, tax simulation, on-chain confirmation or guaranteed buy/sell liquidity. No real orders or Telegram.",
+  "mode": "INDICATIVE QUOTES ONLY",
+  "provider": "GoPlus + Jupiter V2 / 0x read-only",
   "reviewed": [],
-  "updated_utc": "2026-11-03T04:27:10.054164+00:00"
+  "updated_utc": "2026-11-03T05:07:38.998863+00:00"
 }
