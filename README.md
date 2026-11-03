@@ -26,6 +26,21 @@ The earlier paper account was Version 1 with a 50 USDC starting balance and poss
 
 **Example:** $40 paper cash and an old $10 DOGE position become $140 paper cash and the same $10 position. Two additional $50 paper positions may open, leaving $40 cash. Once the older $10 position closes, a new $50 position can occupy its slot *if cash and market criteria permit*. The paper cash is entirely separate from your Coinbase wallet; funding Coinbase does not fund this simulation.
 
+## DEX security review + separate shadow portfolio
+
+The new DEX research pipeline, run after `new_launch_radar.py`, is:
+
+- `dex_security.py`: fetches **read-only GoPlus** token reports for Solana and Base, verifies exact chain/token address and checks available mint/freeze/transfer/honeypot/admin-control/tax/holder-concentration signals. Responses are classified **blocked**, **unknown**, or **observed_pass**. **Unknown is never accepted as a pass.** This is not an audit or security guarantee. No liquidity-lock, wash-trading, connected-wallet or executable swap validation is done.
+- `dex_shadow.py`: reviews up to 12 current new-launch candidates; it can simulate a `$50` shadow entry **only** if security fields return observed_pass, the launch was observed across multiple scans, pool age/volume/liquidity meet higher thresholds, and a public pool USD price can be retrieved. Missing, stale or incomplete information results in **no entry**.
+- An **independent comparative $150 DEX shadow scenario** records up to three distinct $50 positions. This is *not* a second funding source, *not* the existing Coinbase paper ledger, and *not* the real Coinbase balance. **Do not add the two paper scenario budgets together**. The existing Coinbase positions and $50 simulated entry policy are unchanged.
+- The shadow model uses public **GeckoTerminal pool-mark prices** and an illustrative **2.5% cost on each side**; no executable on-chain quotes or simulated transaction receipts are obtained. It uses modeled profit/loss/time exits, but if a sale quote is unavailable, it records **no fake sale**. Even a profitable modeled result can be impossible to realize, especially if pool liquidity disappears.
+- Shadow results and risk findings live in [data/dex_shadow_state.json](https://github.com/Obase2512/Trading/blob/main/data/dex_shadow_state.json) and [data/dex_security_reviews.json](https://github.com/Obase2512/Trading/blob/main/data/dex_security_reviews.json), plus GitHub workflow logs.
+- **No Telegram alerts from the DEX shadow model, no live orders, and no funds/wallet access.** Telegram remains reserved for qualifying existing Coinbase-paper buy/sell events. This DEX evaluation is a *benchmark and engineering experiment*, not a launch-ready trading engine.
+
+The GoPlus endpoint may rate-limit or return partial reports. You can optionally set `GOPLUS_ACCESS_TOKEN` as a GitHub Actions repository **secret**, but the pipeline still runs in restricted, fail-closed research mode without it. Never store wallet seed phrases, signing keys or trading credentials in this repository.
+
+**Next required milestone:** incorporate *real bidirectional Solana Jupiter / Base routing quotes and sell-simulation* without sending signed orders; test pool/holder concentration, liquidity withdrawal, creator clusters, transaction landing, execution costs, and reliable sub-minute monitoring. **Only then should any real-money pilot be considered**, after reviewing trustworthy completed paper-trade outcomes and an explicit separate live-trading authorization.
+
 ## New-launch radar: Solana and Base (research-only)
 
 **Focus:** catch candidate newly created DEX trading pools *before* most tokens would reach centralized exchanges.
