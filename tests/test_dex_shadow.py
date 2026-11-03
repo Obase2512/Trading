@@ -71,7 +71,8 @@ class ShadowTests(unittest.TestCase):
             self.assertEqual(len(reviews), 4)
             self.assertEqual(json.loads((folder/"audit.json").read_text())["mode"],
                              "INDICATIVE QUOTES ONLY")
-            next_state, _, events2 = self.run_case(folder, now=NOW + 300)
+            next_state, _, events2 = self.run_case(folder, now=NOW + 300,
+                                                    risk=lambda *_: {"status": "unknown"})
             self.assertEqual(len(next_state["positions"]), 0)
             self.assertEqual(len(next_state["trades"]), 3)
             self.assertEqual(len(events2), 3)  # separate indicative exits
