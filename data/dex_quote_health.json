@@ -1,0 +1,14 @@
+{
+  "updated_utc": "",
+  "mode": "READ_ONLY_ROUTE_HEALTH_CHECK",
+  "amount_usdc": 50,
+  "status": {
+    "solana": {
+      "status": "not_checked"
+    },
+    "base": {
+      "status": "not_checked"
+    }
+  },
+  "note": "No live provider checks run yet. This is not a trading signal."
+}

@@ -10,7 +10,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '13,43 * * * *'
+    - cron: '7,17,27,37,47,57 * * * *'  # ~10m target; GH Actions may delay/skip
 
 permissions:
   contents: write
@@ -42,12 +42,21 @@ jobs:
         if: github.event_name != 'pull_request' && inputs.test_telegram != true
         continue-on-error: true
         run: python new_launch_radar.py
+      - name: Verify read-only DEX route provider health (no orders)
+        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        continue-on-error: true
+        run: python dex_quote_health.py
+        env:
+          JUPITER_API_KEY: ${{ secrets.JUPITER_API_KEY }}
+          ZEROX_API_KEY: ${{ secrets.ZEROX_API_KEY }}
       - name: Screen DEX leads and update isolated SHADOW simulation (no Telegram or orders)
         if: github.event_name != 'pull_request' && inputs.test_telegram != true
         continue-on-error: true
         run: python dex_shadow.py
         env:
           GOPLUS_ACCESS_TOKEN: ${{ secrets.GOPLUS_ACCESS_TOKEN }}
+          JUPITER_API_KEY: ${{ secrets.JUPITER_API_KEY }}
+          ZEROX_API_KEY: ${{ secrets.ZEROX_API_KEY }}
       - name: Check paper BUY/SELL signals (Telegram only when qualified)
         if: github.event_name != 'pull_request' && inputs.test_telegram != true
         run: python paper_alerts.py
@@ -61,7 +70,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json
+          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json data/dex_quote_health.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh sentinel research and paper state'
             git push

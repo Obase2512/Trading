@@ -23,6 +23,8 @@ NETWORKS = ("solana", "base")
 PAGES_PER_NETWORK = 3
 MAX_SEEN = 700
 MAX_CANDIDATES = 20
+MAX_WATCH_LEADS = 30
+REQUEST_GAP_SECONDS = 2.1  # Spread reads on shared runner/IP; 30 calls/min free tier.
 MAX_POOL_AGE_HOURS = 72
 MIN_POOL_AGE_MINUTES = 5
 
@@ -163,28 +165,91 @@ def parse_pool(pool, network, now):
     }
 
 
-def fetch_new_pools(network, page, requester=None):
-    """Official public GeckoTerminal API, paginated; no paid boosts feed."""
+def parse_watch_lead(pool, network, now):
+    """Broad early discovery; explicitly NOT eligible for trading or clearance."""
+    if not isinstance(pool, dict) or network not in NETWORKS:
+        return None
+    attrs = pool.get("attributes")
+    if not isinstance(attrs, dict):
+        return None
+    address = _address(pool, network)
+    token = _base_token_address(pool, network)
+    created = _created_timestamp(attrs.get("pool_created_at"))
+    if not address or not token or created is None or token.lower() in UNTRUSTED_QUOTES:
+        return None
+    age = (now - created) / 3600
+    liquidity = _finite(attrs.get("reserve_in_usd"))
+    volumes = attrs.get("volume_usd")
+    transactions = attrs.get("transactions")
+    if not isinstance(volumes, dict) or not isinstance(transactions, dict):
+        return None
+    tx = transactions.get("h24", {})
+    if not isinstance(tx, dict):
+        return None
+    volume = _finite(volumes.get("h24"))
+    buys = _finite(tx.get("buys"))
+    sells = _finite(tx.get("sells"))
+    if (not 0 <= age <= MAX_POOL_AGE_HOURS or liquidity is None or volume is None
+            or buys is None or sells is None):
+        return None
+    if not (liquidity >= 20_000 and volume >= 10_000 and buys >= 5 and sells >= 5):
+        return None
+    name = attrs.get("name", "")
+    name = name[:100] if isinstance(name, str) else "Unknown"
+    return {
+        "pool_key": f"{network}:{address}", "network": network, "pool_address": address,
+        "token_address": token, "pool_name": name, "age_hours": round(age, 2),
+        "liquidity_usd": round(liquidity), "volume_24h_usd": round(volume),
+        "buys_24h": int(buys), "sells_24h": int(sells),
+        "meme_theme_hint": any(x in name.lower() for x in MEME_TERMS),
+        "status": "UNVERIFIED_WATCH_ONLY", "eligible_for_buy_alert": False,
+        "url": f"https://www.geckoterminal.com/{network}/pools/{address}",
+    }
+
+
+def fetch_new_pools(network, page, requester=None, sleeper=None):
+    """Public new-pools API with bounded 429/5xx retries and Retry-After support."""
     if network not in NETWORKS or not (1 <= page <= PAGES_PER_NETWORK):
         raise ValueError("Invalid network or page")
     requester = requester or requests.get
-    response = requester(
-        f"{BASE_URL}/networks/{network}/new_pools",
-        params={"page": page},
-        headers={"Accept": "application/json"},
-        timeout=18,
-    )
-    response.raise_for_status()
-    body = response.json()
-    if not isinstance(body, dict) or not isinstance(body.get("data"), list):
-        raise ValueError("Unexpected new-pools API response")
-    return body["data"]
+    sleeper = sleeper or time.sleep
+    url = f"{BASE_URL}/networks/{network}/new_pools"
+    for attempt in range(3):
+        try:
+            response = requester(url, params={"page": page},
+                                 headers={"Accept": "application/json"}, timeout=18)
+            status = response.status_code
+            if isinstance(status, int) and status in (429, 500, 502, 503, 504):
+                if attempt == 2:
+                    response.raise_for_status()
+                    raise ValueError("Repeated transient failure")
+                retry_after = response.headers.get("Retry-After", "") if hasattr(response, "headers") else ""
+                try:
+                    seconds = float(retry_after)
+                except (ValueError, TypeError):
+                    seconds = 0
+                if not math.isfinite(seconds) or seconds < 0:
+                    seconds = 0
+                sleeper(min(12.0, max(2 ** attempt, seconds)))
+                continue
+            response.raise_for_status()
+            body = response.json()
+            if not isinstance(body, dict) or not isinstance(body.get("data"), list):
+                raise ValueError("Unexpected new-pools API response")
+            return body["data"]
+        except (requests.Timeout, requests.ConnectionError):
+            if attempt == 2:
+                raise
+            sleeper(2 ** attempt)
+    raise RuntimeError("Unexpected retry state")
 
-
-def collect(now=None, fetcher=None, prior=None):
+def collect(now=None, fetcher=None, prior=None, sleeper=None, page_gap_seconds=None):
     """Collect independent public pool observations with bounded state."""
     now = time.time() if now is None else now
+    external_fetcher = fetcher is not None
     fetcher = fetcher or fetch_new_pools
+    sleeper = sleeper or time.sleep
+    page_gap_seconds = (0 if external_fetcher else REQUEST_GAP_SECONDS) if page_gap_seconds is None else page_gap_seconds
     prior = prior or {}
     prior_seen = prior.get("seen", {})
     if not isinstance(prior_seen, dict):
@@ -199,17 +264,24 @@ def collect(now=None, fetcher=None, prior=None):
                 "observations": min(100, max(1, int(_finite(entry.get("observations"), 1)))),
             }
     records = {}
+    watch_leads = {}
     errors = []
     inspected = 0
     successful_pages = 0
+    attempts = 0
+    pages_by_network = {network: 0 for network in NETWORKS}
 
     for network in NETWORKS:
         for page in range(1, PAGES_PER_NETWORK + 1):
+            if attempts > 0 and page_gap_seconds > 0:
+                sleeper(page_gap_seconds)
+            attempts += 1
             try:
                 pools = fetcher(network, page)
                 if not isinstance(pools, list):
                     raise ValueError("Pool result is not a list")
                 successful_pages += 1
+                pages_by_network[network] += 1
             except (requests.RequestException, ValueError, TypeError) as exc:
                 LOG.warning("New-pool fetch failed (%s page %d): %s", network, page, exc)
                 errors.append(f"{network}: page {page} unavailable")
@@ -229,13 +301,17 @@ def collect(now=None, fetcher=None, prior=None):
                         item["observations"] = 1
                     item["last_seen"] = now
                     seen[key] = item
+                observed = seen.get(key, {}) if isinstance(key, str) else {}
+                lead = parse_watch_lead(pool, network, now)
+                if lead:
+                    lead["observation_count"] = observed.get("observations", 1)
+                    lead["repeat_observed"] = lead["observation_count"] >= 2
+                    watch_leads[lead["pool_key"]] = lead
                 result = parse_pool(pool, network, now)
                 if not result:
                     continue
-                existing = seen.get(key, {}) if isinstance(key, str) else {}
-                result["observation_count"] = existing.get("observations", 1)
+                result["observation_count"] = observed.get("observations", 1)
                 result["repeat_observed"] = result["observation_count"] >= 2
-                # Do not merge pools using ticker; same names can be impersonations.
                 records[result["pool_key"]] = result
 
     if successful_pages == 0:
@@ -248,6 +324,10 @@ def collect(now=None, fetcher=None, prior=None):
         x["pool_key"],
     ))[:MAX_CANDIDATES]
 
+    watch = sorted(watch_leads.values(), key=lambda x: (
+        -int(x["meme_theme_hint"]), -int(x["repeat_observed"]),
+        -x["liquidity_usd"], x["pool_key"]))[:MAX_WATCH_LEADS]
+
     # Keep recent pool IDs only; do not grow Git history without bounds.
     recent = sorted(seen.items(), key=lambda x: x[1]["last_seen"], reverse=True)
     seen = dict(recent[:MAX_SEEN])
@@ -258,8 +338,11 @@ def collect(now=None, fetcher=None, prior=None):
         "coverage": "Recent paginated pools only; not comprehensive; newly created pools are not necessarily new tokens",
         "scanned_pool_rows": inspected,
         "successful_pages": successful_pages,
+        "pages_by_network": pages_by_network,
+        "coverage_complete": successful_pages == len(NETWORKS) * PAGES_PER_NETWORK,
         "errors": errors,
         "candidates": top,
+        "watch_leads": watch,
         "seen": seen,
         "disclaimer": ("Unverified research leads; no contract, holder, mint, freeze, "
                        "liquidity-lock, wash-trading or honeypot checks. NOT BUY SIGNALS."),
@@ -283,9 +366,12 @@ def run():
     tmp.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     tmp.replace(STATE_PATH)
 
-    LOG.info("NEW LAUNCH RESEARCH: scanned %d pool rows; %d candidates, %d page errors. "
+    LOG.info("NEW LAUNCH RESEARCH: scanned %d pool rows; %d strict candidates, "
+             "%d broader unverified watch leads, %d page errors; coverage complete=%s. "
              "No Telegram notifications or trade orders.",
-             result["scanned_pool_rows"], len(result["candidates"]), len(result["errors"]))
+             result["scanned_pool_rows"], len(result["candidates"]),
+             len(result["watch_leads"]), len(result["errors"]),
+             result["coverage_complete"])
     for item in result["candidates"][:8]:
         LOG.info("RESEARCH ONLY %s / %s: priority %d/100, age %.2fh, liquidity $%d, "
                  "24h volume $%d, %d buys/%d sells, repeat=%s. "
