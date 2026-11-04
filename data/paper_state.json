@@ -13,7 +13,7 @@
       "entry_execution_price": 2.8886399999999996e-06,
       "entry_fee_usdc": 0.4459861248761072,
       "entry_time": 1793751467.0933185,
-      "peak_net_pct": -100.0,
+      "peak_net_pct": 1.0184009967674434,
       "product": "BONK-USDC",
       "units": 17154790.446412116
     }
@@ -62,6 +62,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-04T00:17:47.093318+00:00",
+  "updated_utc": "2026-11-04T06:46:49.879457+00:00",
   "version": 2
 }
