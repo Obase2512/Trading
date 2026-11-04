@@ -5,7 +5,7 @@
       "reason": "One-time paper-only budget increase (50 to 150 USDC)"
     }
   ],
-  "cash_usdc": 86.16995943,
+  "cash_usdc": 36.16995943,
   "positions": {
     "BONK-USDC": {
       "entry_bid": 2.87e-06,
@@ -16,6 +16,16 @@
       "peak_net_pct": 4.747268147654848,
       "product": "BONK-USDC",
       "units": 17154790.446412116
+    },
+    "FARTCOIN-USDC": {
+      "entry_bid": 0.12519,
+      "entry_cost_usdc": 50.0,
+      "entry_execution_price": 0.12569595999999997,
+      "entry_fee_usdc": 0.4459861248761072,
+      "entry_time": 1793826170.677282,
+      "peak_net_pct": -100.0,
+      "product": "FARTCOIN-USDC",
+      "units": 394.2371248457302
     }
   },
   "realized_pnl_usdc": -13.83004057,
@@ -62,6 +72,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-04T14:54:26.628121+00:00",
+  "updated_utc": "2026-11-04T21:02:50.677282+00:00",
   "version": 2
 }
