@@ -5,7 +5,7 @@
       "reason": "One-time paper-only budget increase (50 to 150 USDC)"
     }
   ],
-  "cash_usdc": 36.16995943,
+  "cash_usdc": 80.51256603,
   "positions": {
     "BONK-USDC": {
       "entry_bid": 2.87e-06,
@@ -16,19 +16,9 @@
       "peak_net_pct": 4.747268147654848,
       "product": "BONK-USDC",
       "units": 17154790.446412116
-    },
-    "FARTCOIN-USDC": {
-      "entry_bid": 0.12519,
-      "entry_cost_usdc": 50.0,
-      "entry_execution_price": 0.12569595999999997,
-      "entry_fee_usdc": 0.4459861248761072,
-      "entry_time": 1793826170.677282,
-      "peak_net_pct": -3.2595768174618622,
-      "product": "FARTCOIN-USDC",
-      "units": 394.2371248457302
     }
   },
-  "realized_pnl_usdc": -13.83004057,
+  "realized_pnl_usdc": -19.48743397,
   "starting_usdc": 150.0,
   "trades": [
     {
@@ -70,8 +60,18 @@
       "pnl_usdc": -4.039054,
       "product": "FLOKI-USDC",
       "reason": "modeled stop-loss (-8% net)"
+    },
+    {
+      "entry_cost_usdc": 50.0,
+      "entry_time": 1793826170.677282,
+      "exit_proceeds_usdc": 44.342607,
+      "exit_time": 1793896453.710521,
+      "pnl_pct": -11.31,
+      "pnl_usdc": -5.657393,
+      "product": "FARTCOIN-USDC",
+      "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-05T08:17:20.066269+00:00",
+  "updated_utc": "2026-11-05T16:34:13.710521+00:00",
   "version": 2
 }
