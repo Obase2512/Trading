@@ -23,7 +23,7 @@
       "entry_execution_price": 0.12569595999999997,
       "entry_fee_usdc": 0.4459861248761072,
       "entry_time": 1793826170.677282,
-      "peak_net_pct": -100.0,
+      "peak_net_pct": -3.6490937412118174,
       "product": "FARTCOIN-USDC",
       "units": 394.2371248457302
     }
@@ -72,6 +72,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-04T21:02:50.677282+00:00",
+  "updated_utc": "2026-11-05T01:26:27.452538+00:00",
   "version": 2
 }
