@@ -46,11 +46,11 @@ class QuoteTests(unittest.TestCase):
         fake = MagicMock()
         fake.json.return_value = {"bid": "1.20", "ask": "1.21", "time": TIMESTAMP}
         with (patch.object(paper_alerts, "market_quote", side_effect=ValueError("stale")),
-              patch("coinbase_quotes.requests.get", return_value=fake)):
+              patch("coinbase_quotes.requests.get", return_value=fake) as requester):
             quote, source = paper_alerts.exit_market_quote("BONK-USDC", NOW)
         self.assertEqual(source, "coinbase_exchange")
         self.assertEqual(quote, (1.2, 1.21))
-        self.assertEqual(fake.call_args.kwargs["timeout"], 12)
+        self.assertEqual(requester.call_args.kwargs["timeout"], 12)
 
     def test_exchange_fallback_fails_closed_if_not_independently_fresh(self):
         fake = MagicMock()
