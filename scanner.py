@@ -4,7 +4,7 @@ import requests
 from telegram_alerts import send_telegram
 
 logging.basicConfig(level=logging.INFO)
-state_file = Path("data/state.json")
+state_file = Path(os.getenv("SENTINEL_STATE_DIR", "data")) / "state.json"
 
 def get(url, params=None):
     r = requests.get(url, params=params, timeout=20)
