@@ -21,10 +21,12 @@ LOG = logging.getLogger("sentinel.worker")
 SOURCE = Path(__file__).resolve().parent / "data"
 STATE_FILES = (
     "paper_state.json", "state.json", "new_launch_radar.json",
+    "solana_secondary.json",
     "dex_shadow_state.json", "dex_security_reviews.json", "dex_quote_health.json",
 )
 INTERVALS = {
     "coinbase_catalog": 6 * 3600,
+    "solana_secondary": 3 * 60,
     "launch_research": 3 * 60,
     "route_health": 5 * 60,
     "dex_shadow": 3 * 60,
@@ -95,12 +97,14 @@ def _save_heartbeat(store, health):
 def default_tasks():
     # Imported only AFTER env preflight because paths are resolved on import.
     from scanner import run as coinbase_catalog
+    from solana_launch_feed import run as solana_secondary
     from new_launch_radar import run as launch_research
     from dex_quote_health import run as route_health
     from dex_shadow import run_once as dex_shadow
     from paper_alerts import scan_once as coinbase_paper
     return {
         "coinbase_catalog": coinbase_catalog,
+        "solana_secondary": solana_secondary,
         "launch_research": launch_research,
         "route_health": route_health,
         "dex_shadow": dex_shadow,
