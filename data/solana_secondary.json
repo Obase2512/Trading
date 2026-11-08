@@ -1,9 +1,44 @@
 {
-  "leads": [],
+  "leads": [
+    {
+      "buys_24h": 8466,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 29397,
+      "network": "solana",
+      "pool_address": "ANcPCvf39hmUfRpxHsu5nYyUfTQzqVdpoSur6b1UKo2z",
+      "pool_age_hours": 0.68,
+      "pool_key": "solana:ANcPCvf39hmUfRpxHsu5nYyUfTQzqVdpoSur6b1UKo2z",
+      "pool_name": "Spongebob & Patrick 500",
+      "sells_24h": 6156,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "3bmau35kqfppwHekTPnbLkBPTExF2RZDGVkXcrzypump",
+      "url": "https://dexscreener.com/solana/ANcPCvf39hmUfRpxHsu5nYyUfTQzqVdpoSur6b1UKo2z",
+      "volume_24h_usd": 564438
+    },
+    {
+      "buys_24h": 2214,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 19566,
+      "network": "solana",
+      "pool_address": "6wjHoZJX1E7AicsNBSr889ritmPeNvSmwX7jnLQFC1E4",
+      "pool_age_hours": 0.22,
+      "pool_key": "solana:6wjHoZJX1E7AicsNBSr889ritmPeNvSmwX7jnLQFC1E4",
+      "pool_name": "DebtCoin",
+      "sells_24h": 1486,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "GHLMKtZta7JMcRHXTXa65xS4ubXEzieM5rQvjc8Bpump",
+      "url": "https://dexscreener.com/solana/6wjHoZJX1E7AicsNBSr889ritmPeNvSmwX7jnLQFC1E4",
+      "volume_24h_usd": 140850
+    }
+  ],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-08T19:56:50.314058+00:00"
+  "updated_utc": "2026-11-08T23:29:31.131346+00:00"
 }
