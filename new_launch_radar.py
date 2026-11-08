@@ -8,6 +8,7 @@ and a separate trade-model validation before any trading feature is considered.
 """
 import json
 import logging
+import os
 import math
 import re
 import time
@@ -18,7 +19,7 @@ import requests
 
 LOG = logging.getLogger("sentinel.launch_radar")
 BASE_URL = "https://api.geckoterminal.com/api/v2"
-STATE_PATH = Path(__import__("os").getenv("SENTINEL_STATE_DIR", "data")) / "new_launch_radar.json"
+STATE_PATH = Path(os.getenv("SENTINEL_STATE_DIR", "data")) / "new_launch_radar.json"
 NETWORKS = ("solana", "base")
 PAGES_PER_NETWORK = 3
 MAX_SEEN = 700
