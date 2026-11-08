@@ -8,6 +8,7 @@ Existing Coinbase paper positions, account and Telegram remain unchanged.
 """
 import json
 import logging
+import os
 import math
 import time
 from copy import deepcopy
@@ -20,7 +21,7 @@ from dex_security import review
 from dex_quotes import buy_sell_preview, indicative_sale
 
 LOG = logging.getLogger("sentinel.dex_shadow")
-DATA_DIR = Path(__import__("os").getenv("SENTINEL_STATE_DIR", "data"))
+DATA_DIR = Path(os.getenv("SENTINEL_STATE_DIR", "data"))
 RADAR = DATA_DIR / "new_launch_radar.json"
 STATE = DATA_DIR / "dex_shadow_state.json"
 AUDIT = DATA_DIR / "dex_security_reviews.json"
