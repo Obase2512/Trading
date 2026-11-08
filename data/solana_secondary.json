@@ -1,61 +1,9 @@
 {
-  "leads": [
-    {
-      "buys_24h": 6364,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 112414,
-      "network": "solana",
-      "pool_address": "HjxaEDvdje644vhUmE3VpjpteWLBmWgSsgvYhf6LVw2L",
-      "pool_age_hours": 0.65,
-      "pool_key": "solana:HjxaEDvdje644vhUmE3VpjpteWLBmWgSsgvYhf6LVw2L",
-      "pool_name": "Elysion",
-      "sells_24h": 3096,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "AWaBBNoVuwQ22B8Y5nEtLne2uEfk8UaYEFws7vT7pump",
-      "url": "https://dexscreener.com/solana/HjxaEDvdje644vhUmE3VpjpteWLBmWgSsgvYhf6LVw2L",
-      "volume_24h_usd": 1322101
-    },
-    {
-      "buys_24h": 457,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 42772,
-      "network": "solana",
-      "pool_address": "DHQ4iSTmh5WHyq6zyHx93Pjc519A8T3fpLAs1SCxs46v",
-      "pool_age_hours": 0.32,
-      "pool_key": "solana:DHQ4iSTmh5WHyq6zyHx93Pjc519A8T3fpLAs1SCxs46v",
-      "pool_name": "Ansem's Cat",
-      "sells_24h": 1469,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "3JmVNVLfvSpcoVx5VEUXfejdYrok81GqenpZSqFbpump",
-      "url": "https://dexscreener.com/solana/DHQ4iSTmh5WHyq6zyHx93Pjc519A8T3fpLAs1SCxs46v",
-      "volume_24h_usd": 43690
-    },
-    {
-      "buys_24h": 8677,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 27995,
-      "network": "solana",
-      "pool_address": "J78PrLKVZmSGLLH4qRPNp6GY2epKx4xDJ9KQBRnVH53j",
-      "pool_age_hours": 0.47,
-      "pool_key": "solana:J78PrLKVZmSGLLH4qRPNp6GY2epKx4xDJ9KQBRnVH53j",
-      "pool_name": "\u30af\u30e9\u30a6\u30c7\u30a3\u30a2\u30b3\u30a4\u30f3",
-      "sells_24h": 1989,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "7mAcg6duNYnfeP4pVie1JMvGsXF9FP6A3Aah47rcpump",
-      "url": "https://dexscreener.com/solana/J78PrLKVZmSGLLH4qRPNp6GY2epKx4xDJ9KQBRnVH53j",
-      "volume_24h_usd": 215847
-    }
-  ],
+  "leads": [],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-08T15:37:01.075742+00:00"
+  "updated_utc": "2026-11-08T19:56:50.314058+00:00"
 }
