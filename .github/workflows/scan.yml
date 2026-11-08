@@ -41,6 +41,10 @@ jobs:
           TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Independent Solana profile research (watch-only, no Telegram)
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
+        continue-on-error: true
+        run: python solana_launch_feed.py
       - name: Research newly launched DEX pools (no Telegram or trades)
         if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         continue-on-error: true
@@ -73,7 +77,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json data/dex_quote_health.json
+          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json data/dex_quote_health.json data/solana_secondary.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh sentinel research and paper state'
             git push
