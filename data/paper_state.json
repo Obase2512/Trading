@@ -6,6 +6,16 @@
     }
   ],
   "cash_usdc": 80.51256603,
+  "monitoring": {
+    "exit_quotes": {
+      "BONK-USDC": {
+        "consecutive_failures": 0,
+        "last_checked_unix": 1794127528.3863435,
+        "source": "coinbase_advanced",
+        "status": "ok"
+      }
+    }
+  },
   "positions": {
     "BONK-USDC": {
       "entry_bid": 2.87e-06,
@@ -72,6 +82,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-08T01:57:04.301076+00:00",
+  "updated_utc": "2026-11-08T08:45:28.386343+00:00",
   "version": 2
 }

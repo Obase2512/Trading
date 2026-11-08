@@ -1,9 +1,44 @@
 {
-  "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
-  "updated_utc": "",
-  "profile_tokens_inspected": 0,
-  "successful_pair_lookups": 0,
+  "leads": [
+    {
+      "buys_24h": 6514,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 45772,
+      "network": "solana",
+      "pool_address": "Fb2C8GD8xy9MFiZTx3dCeiZBVdyGLoBrdGriiyr5HKK",
+      "pool_age_hours": 16.39,
+      "pool_key": "solana:Fb2C8GD8xy9MFiZTx3dCeiZBVdyGLoBrdGriiyr5HKK",
+      "pool_name": "Calypso the Horse",
+      "sells_24h": 2500,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "nyNJvTX7tm83S4Jzf9LA6VDAddNSo264wY3ttJbpump",
+      "url": "https://dexscreener.com/solana/Fb2C8GD8xy9MFiZTx3dCeiZBVdyGLoBrdGriiyr5HKK",
+      "volume_24h_usd": 548920
+    },
+    {
+      "buys_24h": 3365,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 20715,
+      "network": "solana",
+      "pool_address": "24E7iDJ3W1qYzhrZSet9ELf6Dak3pRzAPjG89NULRWLc",
+      "pool_age_hours": 0.57,
+      "pool_key": "solana:24E7iDJ3W1qYzhrZSet9ELf6Dak3pRzAPjG89NULRWLc",
+      "pool_name": "yarl",
+      "sells_24h": 2251,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "2cdswcuZfeRgdTeKheCUQWMqz2NiQkDeb635smkZpump",
+      "url": "https://dexscreener.com/solana/24E7iDJ3W1qYzhrZSet9ELf6Dak3pRzAPjG89NULRWLc",
+      "volume_24h_usd": 164489
+    }
+  ],
   "lookup_errors": 0,
-  "leads": [],
-  "trading_eligible": false
+  "profile_tokens_inspected": 8,
+  "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
+  "successful_pair_lookups": 8,
+  "trading_eligible": false,
+  "updated_utc": "2026-11-08T08:45:08.874186+00:00"
 }
