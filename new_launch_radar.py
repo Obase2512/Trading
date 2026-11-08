@@ -361,22 +361,21 @@ def run():
         LOG.warning("%s", exc)
         return None
 
-    # Independent secondary Solana discovery is RESEARCH ONLY and cannot
-    # upgrade an unverified profile to an executable DEX paper candidate.
+    # An independently persisted DEX Screener source remains accessible even
+    # when GeckoTerminal fails; it is never promoted to trade candidates.
+    secondary_path = STATE_PATH.parent / "solana_secondary.json"
     try:
-        from solana_launch_feed import collect as secondary_collect
-        secondary = secondary_collect()
+        secondary = json.loads(secondary_path.read_text())
+        ts = _created_timestamp(secondary["updated_utc"])
+        if (ts is None or not (-120 <= time.time() - ts <= 1800)
+                or secondary.get("trading_eligible") is not False
+                or not isinstance(secondary.get("leads"), list)):
+            raise ValueError("Secondary provider snapshot stale or invalid")
         result["secondary_solana"] = secondary
-        LOG.info("SECONDARY SOLANA RESEARCH: %d unverified leads from %d recent profiles; "
-                 "%d lookup errors. NO BUY SIGNALS.",
-                 len(secondary["leads"]), secondary["profile_tokens_inspected"],
-                 secondary["lookup_errors"])
-    except (ValueError, TypeError, requests.RequestException) as exc:
-        LOG.warning("Secondary Solana feed unavailable (%s), primary research retained",
-                    type(exc).__name__)
+    except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
         result["secondary_solana"] = {
-            "source": "DEX Screener", "status": "unavailable", "leads": [],
-            "trading_eligible": False,
+            "source": "DEX Screener", "status": "unavailable_or_stale",
+            "leads": [], "trading_eligible": False,
         }
 
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
