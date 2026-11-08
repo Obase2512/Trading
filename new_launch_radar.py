@@ -361,6 +361,24 @@ def run():
         LOG.warning("%s", exc)
         return None
 
+    # Independent secondary Solana discovery is RESEARCH ONLY and cannot
+    # upgrade an unverified profile to an executable DEX paper candidate.
+    try:
+        from solana_launch_feed import collect as secondary_collect
+        secondary = secondary_collect()
+        result["secondary_solana"] = secondary
+        LOG.info("SECONDARY SOLANA RESEARCH: %d unverified leads from %d recent profiles; "
+                 "%d lookup errors. NO BUY SIGNALS.",
+                 len(secondary["leads"]), secondary["profile_tokens_inspected"],
+                 secondary["lookup_errors"])
+    except (ValueError, TypeError, requests.RequestException) as exc:
+        LOG.warning("Secondary Solana feed unavailable (%s), primary research retained",
+                    type(exc).__name__)
+        result["secondary_solana"] = {
+            "source": "DEX Screener", "status": "unavailable", "leads": [],
+            "trading_eligible": False,
+        }
+
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp = STATE_PATH.with_suffix(".tmp")
     tmp.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
