@@ -4,7 +4,10 @@ DEX Screener profiles can be promoted/paid and DO NOT enumerate every launch.
 Pair creation timestamps are POOL dates, not token mint dates. This feed never
 creates simulated entries, security clearance, Telegram alerts or real trades.
 """
+import json
 import logging
+import os
+from pathlib import Path
 import math
 import re
 import time
@@ -14,6 +17,7 @@ import requests
 
 LOG = logging.getLogger("sentinel.solana_secondary")
 BASE = "https://api.dexscreener.com"
+STATE_PATH = Path(os.getenv("SENTINEL_STATE_DIR", "data")) / "solana_secondary.json"
 MAX_LOOKUPS = 8
 MAX_WATCH = 12
 MAX_PAIR_AGE_HOURS = 72
@@ -136,3 +140,26 @@ def collect(now=None, fetch=None, sleep=None):
                                        x["pool_key"]))[:MAX_WATCH],
         "trading_eligible": False,
     }
+
+
+
+def run():
+    """Persist independent secondary lead list, even if GeckoTerminal is down."""
+    try:
+        result = collect()
+    except (ValueError, TypeError, requests.RequestException) as exc:
+        LOG.warning("Secondary Solana discovery unavailable (%s): prior state retained",
+                    type(exc).__name__)
+        return None
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    temp = STATE_PATH.with_suffix(".tmp")
+    temp.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+    temp.replace(STATE_PATH)
+    LOG.info("SECONDARY SOLANA: %d unverified profile-linked leads, %d pair lookup errors. "
+             "No buy signals or real orders.", len(result["leads"]), result["lookup_errors"])
+    return result
+
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+    run()
