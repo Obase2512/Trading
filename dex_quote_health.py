@@ -15,7 +15,7 @@ import requests
 from dex_quotes import buy_sell_preview
 
 LOG = logging.getLogger("sentinel.quote_probe")
-PATH = Path("data/dex_quote_health.json")
+PATH = Path(os.getenv("SENTINEL_STATE_DIR", "data")) / "dex_quote_health.json"
 # Wrapped SOL (Solana) and WETH (Base) are *reference* assets only.
 REFERENCE_TOKENS = {
     "solana": "So11111111111111111111111111111111111111112",

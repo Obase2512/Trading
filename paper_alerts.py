@@ -13,14 +13,17 @@ from pathlib import Path
 import requests
 
 from scanner import get
+from coinbase_quotes import advanced_quote, exchange_exit_quote
+from signals import MAX_REALIZED_LOSS
 from telegram_alerts import send_telegram
 from signals import (MAX_POSITIONS, POSITION_USDC, initial_state,
                      migrate_state, validate_state, fresh_candles,
                      assess_market, entry, assess_exit, stamp_state)
 
 LOG = logging.getLogger("sentinel.paper")
-STATE_PATH = Path("data/paper_state.json")
-DISCOVERY_PATH = Path("data/state.json")
+DATA_DIR = Path(os.getenv("SENTINEL_STATE_DIR", "data"))
+STATE_PATH = DATA_DIR / "paper_state.json"
+DISCOVERY_PATH = DATA_DIR / "state.json"
 CB_MARKET = "https://api.coinbase.com/api/v3/brokerage/market/products"
 
 # Explicitly reviewed symbols only. A new listing must appear in this universe
@@ -51,20 +54,21 @@ def watchlist():
 
 
 def market_quote(product, now):
+    """Strict primary quote for all entry assessments (no stale fallbacks)."""
     ticker = get(f"{CB_MARKET}/{product}/ticker", {"limit": 1})
-    if not isinstance(ticker, dict):
-        raise ValueError("Unexpected Coinbase ticker")
-    trades = ticker.get("trades")
-    if not isinstance(trades, list) or not trades or not isinstance(trades[0], dict):
-        raise ValueError("Missing market trade timestamp")
-    from datetime import datetime
-    ts = datetime.fromisoformat(trades[0]["time"].replace("Z", "+00:00")).timestamp()
-    if not (-60 <= now - ts <= 900):
-        raise ValueError("Stale public ticker")
-    bid, ask = float(ticker["best_bid"]), float(ticker["best_ask"])
-    if not (0 < bid <= ask):
-        raise ValueError("Invalid bid/ask")
-    return bid, ask
+    return advanced_quote(ticker, now)
+
+
+def exit_market_quote(product, now):
+    """Read-only independent exchange fallback ONLY for existing paper exits."""
+    try:
+        return market_quote(product, now), "coinbase_advanced"
+    except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
+        LOG.warning("Advanced quote unavailable for held %s (%s); "
+                    "trying independently timestamped Coinbase Exchange feed",
+                    product, type(exc).__name__)
+        quote = exchange_exit_quote(product, now)
+        return quote, "coinbase_exchange"
 
 
 def public_candles(product, now):
@@ -140,12 +144,17 @@ def scan_once(now=None):
     state = load_state()
     alerts = []
     exited_this_scan = set()
+    quote_status = state.setdefault("monitoring", {}).setdefault("exit_quotes", {})
 
     # Each simulated holding is tracked independently, even when no longer in
     # the approved watchlist (so it doesn't silently stop being monitored).
     for product in list(state["positions"]):
         try:
-            bid, _ = market_quote(product, now)
+            (bid, _), source = exit_market_quote(product, now)
+            quote_status[product] = {
+                "status": "ok", "source": source, "last_checked_unix": now,
+                "consecutive_failures": 0,
+            }
             decision = assess_exit(state, product, bid, now)
             if decision and decision["exit"]:
                 trade = decision["trade"]
@@ -154,15 +163,27 @@ def scan_once(now=None):
                     f"PAPER SELL WATCH {product}: {trade['reason']}; "
                     f"simulated net P&L {trade['pnl_pct']:+.2f}% / "
                     f"{trade['pnl_usdc']:+.2f} USDC. NO REAL ORDER. "
-                    "30-minute polling cannot guarantee stop execution.")
+                    "Scheduled polling cannot guarantee stop execution.")
             elif decision:
                 LOG.info("PAPER HOLD %s: modeled net %+.2f%%", product,
                          decision["net_pct"])
         except (requests.RequestException, ValueError, TypeError, KeyError) as exc:
-            LOG.warning("SKIP exit evaluation %s: %s", product, exc)
+            previous = quote_status.get(product, {})
+            quote_status[product] = {
+                "status": "unavailable", "last_checked_unix": now,
+                "consecutive_failures": min(100000, int(previous.get("consecutive_failures", 0)) + 1),
+                "reason": "No independently timestamped fresh exit quote",
+            }
+            LOG.error("PAPER EXIT MONITOR UNAVAILABLE %s: %s. "
+                      "Position is NOT closed; no fabricated stop fill.",
+                      product, type(exc).__name__)
+    # Preserve failed health on open positions; completed positions are tracked in trades.
+    for product in list(quote_status):
+        if product not in state["positions"]:
+            del quote_status[product]
 
     slots = MAX_POSITIONS - len(state["positions"])
-    if slots > 0:
+    if slots > 0 and state["realized_pnl_usdc"] > -MAX_REALIZED_LOSS:
         candidates = []
         for product in watchlist():
             if product in state["positions"] or product in exited_this_scan:

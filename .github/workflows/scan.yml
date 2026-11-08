@@ -31,26 +31,33 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Validate signal logic
         run: python -m unittest discover -s tests -v
+      - name: State ownership notice
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE == 'true'
+        run: echo "Persistent worker is single writer; GitHub scheduled scans and state writes are disabled."
       - name: Discover assets (GitHub logs only; no Telegram)
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true'
         run: python scanner.py
         env:
           TEST_TELEGRAM: ${{ inputs.test_telegram || 'false' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Independent Solana profile research (watch-only, no Telegram)
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
+        continue-on-error: true
+        run: python solana_launch_feed.py
       - name: Research newly launched DEX pools (no Telegram or trades)
-        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         continue-on-error: true
         run: python new_launch_radar.py
       - name: Verify read-only DEX route provider health (no orders)
-        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         continue-on-error: true
         run: python dex_quote_health.py
         env:
           JUPITER_API_KEY: ${{ secrets.JUPITER_API_KEY }}
           ZEROX_API_KEY: ${{ secrets.ZEROX_API_KEY }}
       - name: Screen DEX leads and update isolated SHADOW simulation (no Telegram or orders)
-        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         continue-on-error: true
         run: python dex_shadow.py
         env:
@@ -58,7 +65,7 @@ jobs:
           JUPITER_API_KEY: ${{ secrets.JUPITER_API_KEY }}
           ZEROX_API_KEY: ${{ secrets.ZEROX_API_KEY }}
       - name: Check paper BUY/SELL signals (Telegram only when qualified)
-        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         run: python paper_alerts.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -66,11 +73,11 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - name: Save non-sensitive research and paper states
-        if: github.event_name != 'pull_request' && inputs.test_telegram != true
+        if: github.event_name != 'pull_request' && vars.SENTINEL_WORKER_ACTIVE != 'true' && inputs.test_telegram != true
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json data/dex_quote_health.json
+          git add data/state.json data/paper_state.json data/new_launch_radar.json data/dex_shadow_state.json data/dex_security_reviews.json data/dex_quote_health.json data/solana_secondary.json
           if ! git diff --cached --quiet; then
             git commit -m 'chore: refresh sentinel research and paper state'
             git push

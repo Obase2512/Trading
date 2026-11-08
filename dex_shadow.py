@@ -8,6 +8,7 @@ Existing Coinbase paper positions, account and Telegram remain unchanged.
 """
 import json
 import logging
+import os
 import math
 import time
 from copy import deepcopy
@@ -20,9 +21,10 @@ from dex_security import review
 from dex_quotes import buy_sell_preview, indicative_sale
 
 LOG = logging.getLogger("sentinel.dex_shadow")
-RADAR = Path("data/new_launch_radar.json")
-STATE = Path("data/dex_shadow_state.json")
-AUDIT = Path("data/dex_security_reviews.json")
+DATA_DIR = Path(os.getenv("SENTINEL_STATE_DIR", "data"))
+RADAR = DATA_DIR / "new_launch_radar.json"
+STATE = DATA_DIR / "dex_shadow_state.json"
+AUDIT = DATA_DIR / "dex_security_reviews.json"
 CAPITAL = 150.0
 BET = 50.0
 MAX_POSITIONS = 3

@@ -3,6 +3,41 @@
 **Paper trading only. No Coinbase API keys, no exchange orders, no DEX purchases.**
 This app screens curated Coinbase exchange-listed meme-coin symbols using public candles and quotes. It uses deterministic price/volume rules, with optional AI commentary, not a validated predictive AI trading strategy.
 
+## Reliability upgrade — monitoring ownership and early Solana coverage
+
+### Coinbase paper exit monitoring (active after the next GitHub workflow run)
+
+- Existing Coinbase paper positions are checked with the Advanced Trade public ticker. If its **independently timestamped** trade quote is stale/unavailable, a *separate Coinbase Exchange REST ticker* is tried **for exits only**. Every price must have a fresh timestamp and valid bid/ask; stale or excessively wide quotes **never create fictitious stop-loss fills**. This does not guarantee real execution.
+- Exit health is recorded in `data/paper_state.json` at `monitoring.exit_quotes.<SYMBOL>`, including independent price source and count of consecutive missing quotes. Missing data is logged clearly; Telegram remains **paper BUY/SELL events only**, never monitoring chatter.
+- The existing paper cumulative realized-loss limit of **-$15** still blocks new entries; it does **not** delete or automatically sell old paper positions. The logic now avoids scanning new candidates when entries are blocked.
+
+### Second Solana discovery source (active after next workflow run)
+
+- In addition to GeckoTerminal, `solana_launch_feed.py` reads **recent DEX Screener token profiles**, then verifies their Solana pair address, pool creation time, liquidity, volume, and buy/sell activity through the token-pairs endpoint.
+- Results are stored separately at [data/solana_secondary.json](https://github.com/Obase2512/Trading/blob/main/data/solana_secondary.json), and copied into the radar snapshot only while the source is fresh.
+- **DEX Screener profiles may be paid/promoted and are NOT exhaustive new mint listings.** This is a second unverified *research-only* source, NOT a meme-coin safety ranking, trading opportunity, or permission to enter. No auto-buy or Telegram signals result from these discoveries.
+- If one feed is unavailable, its failure should not erase the independently persisted other feed.
+
+### Always-on worker prepared; NOT DEPLOYED or ACTIVE by default
+
+A long-running, single-writer alternative to GitHub's delayed schedules is now available: `sentinel_worker.py`.
+It targets **60-second** checks for existing Coinbase paper positions, **3-minute** launch/DEX shadow scans, and **5-minute** provider-health checks. Cadences are application targets, not guarantees. This is **paper-only**.
+
+**Important: do not start the worker while GitHub Actions continues writing portfolio state.**
+A persistent hosting account (for example [Railway persistent services](https://docs.railway.com/services))
+and a persistent filesystem volume are required. Hosting can cost money. No new exchange account, wallet or Coinbase API key is required.
+
+Recommended single-writer handoff if you choose persistent hosting:
+
+1. Keep the GitHub schedule as-is until ready for the handoff; note the latest completed `data/paper_state.json` and `data/dex_shadow_state.json`. This repository's main branch must contain the final, up-to-date ledgers before worker deployment.
+2. Set GitHub repository **Settings → Secrets and variables → Actions → Variables**: `SENTINEL_WORKER_ACTIVE=true`. This stops **the data-writing and Telegram steps** on subsequent GitHub scheduled/manual workflows (pull-request unit tests remain enabled).
+3. In Railway (or similar), deploy **one persistent worker service** from the latest `main` commit. In its service Settings set **Start Command** to `python sentinel_worker.py`. Attach a persistent volume mounted to **`/data`** and configure `SENTINEL_STATE_DIR=/data`. Make sure the source branch contains the latest GitHub state at this handoff; do not deploy from an old checkout.
+4. Set worker service variables `SENTINEL_WORKER_ENABLED=true` and `SENTINEL_GITHUB_WRITER_DISABLED=true` **only after** step 2. If you want Telegram paper BUY/SELL alerts, copy the existing `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` as **service secrets**, never in the public repo. Optional research API secrets: `JUPITER_API_KEY`, `ZEROX_API_KEY`, `GOPLUS_ACCESS_TOKEN`.
+5. Inspect worker service logs and the volume file **`/data/worker_heartbeat.json`**. The worker fails closed without the owner-handoff flags or mounted volume, and refuses concurrent workers on the same volume. Persistent mode saves state **on that volume**, not to the GitHub JSON files.
+6. To switch back to GitHub, first stop the worker, **copy the latest saved paper/DEX ledgers from the persistent volume back to the repository**, and only then set `SENTINEL_WORKER_ACTIVE=false`. Otherwise state would rewind and alerts/trades could duplicate.
+
+This arrangement **has not been deployed to any cloud account**. It will NOT speed up the running GitHub schedule until a persistent host is provisioned and explicitly switched over. Never run two monitoring writers or multiple worker replicas. Neither setup is suitable for guaranteed stop-loss execution, and no real-money trade execution exists.
+
 ## Portfolio (Version 2)
 
 | Setting | Value |

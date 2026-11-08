@@ -8,6 +8,7 @@ and a separate trade-model validation before any trading feature is considered.
 """
 import json
 import logging
+import os
 import math
 import re
 import time
@@ -18,7 +19,7 @@ import requests
 
 LOG = logging.getLogger("sentinel.launch_radar")
 BASE_URL = "https://api.geckoterminal.com/api/v2"
-STATE_PATH = Path("data/new_launch_radar.json")
+STATE_PATH = Path(os.getenv("SENTINEL_STATE_DIR", "data")) / "new_launch_radar.json"
 NETWORKS = ("solana", "base")
 PAGES_PER_NETWORK = 3
 MAX_SEEN = 700
@@ -360,6 +361,23 @@ def run():
     except RuntimeError as exc:
         LOG.warning("%s", exc)
         return None
+
+    # An independently persisted DEX Screener source remains accessible even
+    # when GeckoTerminal fails; it is never promoted to trade candidates.
+    secondary_path = STATE_PATH.parent / "solana_secondary.json"
+    try:
+        secondary = json.loads(secondary_path.read_text())
+        ts = _created_timestamp(secondary["updated_utc"])
+        if (ts is None or not (-120 <= time.time() - ts <= 1800)
+                or secondary.get("trading_eligible") is not False
+                or not isinstance(secondary.get("leads"), list)):
+            raise ValueError("Secondary provider snapshot stale or invalid")
+        result["secondary_solana"] = secondary
+    except (OSError, ValueError, TypeError, KeyError, json.JSONDecodeError):
+        result["secondary_solana"] = {
+            "source": "DEX Screener", "status": "unavailable_or_stale",
+            "leads": [], "trading_eligible": False,
+        }
 
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp = STATE_PATH.with_suffix(".tmp")
