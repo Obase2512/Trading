@@ -21,8 +21,9 @@ from signals import (MAX_POSITIONS, POSITION_USDC, initial_state,
                      assess_market, entry, assess_exit, stamp_state)
 
 LOG = logging.getLogger("sentinel.paper")
-STATE_PATH = Path("data/paper_state.json")
-DISCOVERY_PATH = Path("data/state.json")
+DATA_DIR = Path(os.getenv("SENTINEL_STATE_DIR", "data"))
+STATE_PATH = DATA_DIR / "paper_state.json"
+DISCOVERY_PATH = DATA_DIR / "state.json"
 CB_MARKET = "https://api.coinbase.com/api/v3/brokerage/market/products"
 
 # Explicitly reviewed symbols only. A new listing must appear in this universe
