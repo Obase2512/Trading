@@ -14,72 +14,38 @@
   "secondary_solana": {
     "leads": [
       {
-        "buys_24h": 3249,
+        "buys_24h": 101,
         "eligible_for_buy_alert": false,
-        "liquidity_usd": 29184,
+        "liquidity_usd": 26800,
         "network": "solana",
-        "pool_address": "H1QVnd87qcBnp2v9uTpR3qw43egVrwHxoSxXzNu7UJBL",
-        "pool_age_hours": 0.26,
-        "pool_key": "solana:H1QVnd87qcBnp2v9uTpR3qw43egVrwHxoSxXzNu7UJBL",
-        "pool_name": "Jensen Huang Coin",
-        "sells_24h": 2309,
+        "pool_address": "741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
+        "pool_age_hours": 12.37,
+        "pool_key": "solana:741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
+        "pool_name": "Pitaya",
+        "sells_24h": 75,
         "source": "DEX Screener latest token profiles + token-pairs API",
         "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
         "status": "RESEARCH_ONLY_UNVERIFIED",
-        "token_address": "GgN3jfbg75SiW4qJKmak4VJrnWQvQdnUmN4NLHW5pump",
-        "url": "https://dexscreener.com/solana/H1QVnd87qcBnp2v9uTpR3qw43egVrwHxoSxXzNu7UJBL",
-        "volume_24h_usd": 185256
+        "token_address": "Ao6rgPZBa12yHaT6Eaa7W35qDq1Zx3xuvKiNXmppump",
+        "url": "https://dexscreener.com/solana/741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
+        "volume_24h_usd": 11898
       },
       {
-        "buys_24h": 6101,
+        "buys_24h": 3566,
         "eligible_for_buy_alert": false,
-        "liquidity_usd": 22688,
+        "liquidity_usd": 16769,
         "network": "solana",
-        "pool_address": "6EGaQV5Vbrx28CzsmcE2ZdzEghbhDY6TAHBLEXdPWftU",
-        "pool_age_hours": 1.04,
-        "pool_key": "solana:6EGaQV5Vbrx28CzsmcE2ZdzEghbhDY6TAHBLEXdPWftU",
-        "pool_name": "signs were there",
-        "sells_24h": 3957,
+        "pool_address": "HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
+        "pool_age_hours": 0.5,
+        "pool_key": "solana:HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
+        "pool_name": "Sheepcoin",
+        "sells_24h": 2717,
         "source": "DEX Screener latest token profiles + token-pairs API",
         "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
         "status": "RESEARCH_ONLY_UNVERIFIED",
-        "token_address": "7WZ9HiHWoiFRAj4gip3fCKNGuBZMZQAubVE9kbCTpump",
-        "url": "https://dexscreener.com/solana/6EGaQV5Vbrx28CzsmcE2ZdzEghbhDY6TAHBLEXdPWftU",
-        "volume_24h_usd": 384155
-      },
-      {
-        "buys_24h": 1559,
-        "eligible_for_buy_alert": false,
-        "liquidity_usd": 21063,
-        "network": "solana",
-        "pool_address": "2SEkhfJgTChJkmPSV5sbKvXTCmdaHBtLKn5HUr4Kzodg",
-        "pool_age_hours": 36.13,
-        "pool_key": "solana:2SEkhfJgTChJkmPSV5sbKvXTCmdaHBtLKn5HUr4Kzodg",
-        "pool_name": "one chest can change your life",
-        "sells_24h": 1430,
-        "source": "DEX Screener latest token profiles + token-pairs API",
-        "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-        "status": "RESEARCH_ONLY_UNVERIFIED",
-        "token_address": "5xcEFpzKHU3JTXSChXRXuXMWZRr8oHWu3ZFbtch1pump",
-        "url": "https://dexscreener.com/solana/2SEkhfJgTChJkmPSV5sbKvXTCmdaHBtLKn5HUr4Kzodg",
-        "volume_24h_usd": 132532
-      },
-      {
-        "buys_24h": 1372,
-        "eligible_for_buy_alert": false,
-        "liquidity_usd": 16767,
-        "network": "solana",
-        "pool_address": "5uqBKh3zXUhPX38EQbGeNWBB3AB5x7TfkwbDEZMb8Guw",
-        "pool_age_hours": 0.29,
-        "pool_key": "solana:5uqBKh3zXUhPX38EQbGeNWBB3AB5x7TfkwbDEZMb8Guw",
-        "pool_name": "ELYS.RUN",
-        "sells_24h": 964,
-        "source": "DEX Screener latest token profiles + token-pairs API",
-        "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-        "status": "RESEARCH_ONLY_UNVERIFIED",
-        "token_address": "T8PVfjmAsczCPk5odgScSHbjyywe4QTxSaVPeVoELYS",
-        "url": "https://dexscreener.com/solana/5uqBKh3zXUhPX38EQbGeNWBB3AB5x7TfkwbDEZMb8Guw",
-        "volume_24h_usd": 84964
+        "token_address": "B9mnvoCNLzxaz2EJsLwaSynAMxkrK49VXpFAYze5pump",
+        "url": "https://dexscreener.com/solana/HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
+        "volume_24h_usd": 200596
       }
     ],
     "lookup_errors": 0,
@@ -87,14 +53,9 @@
     "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
     "successful_pair_lookups": 8,
     "trading_eligible": false,
-    "updated_utc": "2026-11-09T02:56:28.762675+00:00"
+    "updated_utc": "2026-11-09T11:02:42.040370+00:00"
   },
   "seen": {
-    "base_0x00b6d92b9f0d62feddaf8a43215f74390240c32bbbc4b29a1418ff26a51d7de4": {
-      "first_seen": 1794063123.2197795,
-      "last_seen": 1794063123.2197795,
-      "observations": 1
-    },
     "base_0x00c9e3636e1eeb1ae65fac4309cb547f0321bf3a": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
@@ -140,6 +101,11 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
+    "base_0x068131491ca92e7dac6fc9ebad40622def2d761d": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x081099f2e035a40c788cb14123f233c6e208c713": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -170,6 +136,11 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
+    "base_0x0c06cbc568c91f64939a96365df0b6aa1f33c81d1e39b5a326ed0153da64deda": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x0d2ffd602427accf68c8b90e16db3d0755a7fa195ae1340f52541f05099beda6": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -195,11 +166,6 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "base_0x0e9d542564453049a692ccc62b0f5db630903299008ce6e3cf124f0a585b40d7": {
-      "first_seen": 1794063123.2197795,
-      "last_seen": 1794063123.2197795,
-      "observations": 1
-    },
     "base_0x0f983fe44cdd2eacbc0c9ca3f5b708d61d6426665a3cba3d4435c3f002ed12cc": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
@@ -208,6 +174,11 @@
     "base_0x108edd9ac6d0054c01f5baa674542b9bd6502944684ab2a35e7efe153f96ac7c": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "base_0x1157ad26370c14bb588087e05315c64b6cd46a5b5b44171b783f77a40ab2ef3a": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x121d1b06ac7646d6b7d93f636b43ec20212e442328b684f8a68855173702d112": {
@@ -220,9 +191,14 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "base_0x126115b003e40c166b2f9a7bba7f1eb4d62745a2fb389b9349f88015c85eca69": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x1249a7e2f45c517d816af531d0e5934bf5feb2a6": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "base_0x124bcbcbc1cea16e6d1df41e4fe9a33da9af6f571d99624bcca9847c55072ddc": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x133fddc162612b3876dc5c5d9a856529f206d09c": {
@@ -245,9 +221,9 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "base_0x153d3fb01198af53fbe53140c3495f0332847246cd38d4b82e676da7ac6c51bd": {
-      "first_seen": 1794063123.2197795,
-      "last_seen": 1794063123.2197795,
+    "base_0x15daa320d342058ca674344fdddbf6ab481c9cc6": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x15e6e34f8330d51737062d091732ef420e839179b81e291db8fd9dcbb17c988b": {
@@ -270,11 +246,6 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0x18870330c0ac6fb59293616290e17a7450544030e1fde3a28544e6974073235d": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x193c102c9414d9939b15f24b030a30a278623cab": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
@@ -290,24 +261,24 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
+    "base_0x1d58e769cf7ef233c149afbf25e73b2226804ab137847e86f64cb7b64dec9ff1": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "base_0x1e4819bf409e94f0b312ffca99e87a7a213bc60a2911d8faea7bc3d0920cb04c": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x1ee85a002ce6c204abf700855fb9f02b8f507891": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "base_0x1f2864dd7a00fe0090a8ffcc6581ed8528341a353f2d643af9f21795a238ee5e": {
-      "first_seen": 1794063123.2197795,
-      "last_seen": 1794063123.2197795,
-      "observations": 1
-    },
     "base_0x1f5cb1a8530e936e91f6cb64f69dd27a6e9f4d0a": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
-      "observations": 1
-    },
-    "base_0x20b45fb9cc8610d5099f5c59335db625267a47142228e1ee69cf03bf88f7d4e0": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x216bfbffb754156cc1606db0682d6065fd040101760ac7453c1022135a9da367": {
@@ -325,9 +296,9 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "base_0x24161f3acc8d9f608716834daa461885ea23889f": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x22ba04e2a663efcbcf4059a81a5ad1e3e5bfab4076ada69956c36c1d4eecef80": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x246425fd0d62520abc3de84d9c47abd4684a90b5391d3f953c8e51b566a66907": {
@@ -395,11 +366,6 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0x2af3fae7e1304de6af7ee658184f0dcdccbd3e1f2d0319bf775186abd2b3737d": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x2b489c94112256f92e7a76df5e369af75494893a7af299bb78b8c173ace4c0ee": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -435,14 +401,14 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
+    "base_0x312640a1b39e73d3fed774ab37c964035e6fa9ad": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x31e7f620de66f307e5fbc81c5ff5ec0acadfc90fc0fa74f4acd98d1384ee8126": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
-      "observations": 1
-    },
-    "base_0x31e9f1f09e65160d0eef305a95fe35540cb81765": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x321aa8db67adbfa1e6ae37807ea169124c03197d": {
@@ -480,9 +446,19 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
+    "base_0x38605fedc3c99143406bc515289c22431ce4375b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x393267552d498fce4ce9c58e94ccc4f4375be26df288659b6bf9298dc9415a8e": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "base_0x3a46b59e4c9c3a778a7367a4d236c91c96c77f660d997e53912d72e79d39310b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x3aef450ade888ce111dcd5803ac5f8f35e02d2a115f30baa260bdc08d266c6ef": {
@@ -505,6 +481,11 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
+    "base_0x3dc47c811e3f2b4a681c8f3cbcabc761e22a24ff599b5f144cca3a2402fd4ffa": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x3dda6f62192eb96ae688fc745133e7f29d0bc1e817b9b99d945f23450105d5bc": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
@@ -520,19 +501,9 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
-    "base_0x3f6d50e3691bf467bb63fb9cad09aaf3d3390d5a2a99eb9bba4eed1bdaf75924": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x3fc5f0f5f6a77823ee0760e02578f8c2f16d8d23432f3ec75cce47732be40db8": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
-      "observations": 1
-    },
-    "base_0x4061e6d7cccebac583d8ee0b03aace6a6a98c100a873bdccd6347b9b2f9ebdf1": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x41ddc33827b8d0a0268c77fc966637798dae2c76": {
@@ -555,9 +526,9 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "base_0x42bd97a094142990ff48e4ccb57e3e5d0f619493": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x42d35c257170e878ae4d63617d1b4239eca4419b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x430e4af2f99d5f580eca7c5cc3c2d5a6794c907e": {
@@ -568,6 +539,11 @@
     "base_0x441329a7f4ebdd82b0ffb4e72ca6bbe17bac2d1e": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "base_0x459b495fb3f39299e9f1fcc315254a221fe8109f24303768a67040eee02094ac": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x479b0c1d1f9f3091f740d1671546b4921883093b805208a1d71e823d885ef087": {
@@ -588,6 +564,11 @@
     "base_0x48a8c4801352ac0ba30b85a07eecf1a5bf690b60a76bf5ceeb1dd316ed130531": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "base_0x4938366655e3ff20b6610bc007080868a474f3fcf3e39dc859bda1c1d3145d1e": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x49921581fd49aee30053a1ccd5a235de25c845502a7f903f683a6e511d0239fc": {
@@ -628,11 +609,6 @@
     "base_0x4f3ebd255e3e179a13cdd430f91e01593eb82ea16f74d3134204073c0b172286": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
-      "observations": 1
-    },
-    "base_0x4f59abe743887f8d4811d8e0d80c4df5a1d047ec": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x5084b58b0473114748d05f8ccf77a01d2ac2bdafb1a1d2a4222a3a75fdcc3f9d": {
@@ -690,9 +666,19 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
+    "base_0x53096ddd5ef0235fe4483951387870f56eba508dba7dd60b3ec94cfc800622ba": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x54aad6625e29f9bea3c38affb4064cb4b0fdffaef0ecd16143eb96500a06f8a7": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "base_0x54c6dece4d67e01defd18ac334cd68954285122b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x559df99e9742e4fe4c0bedb1e01de461e71a8e906f635165e6ea96618c0e380d": {
@@ -715,14 +701,14 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
+    "base_0x5770f639019886b230bb766e779b9294b440abd8af01c5bead32811b0d765096": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x57c5b408730d72da580518efa6f02eb16107f7f80542250120124e9c80d08bc5": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
-      "observations": 1
-    },
-    "base_0x57f37105fae8979f46af84a1b10df6e0c59d14c6": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x58740968393dee4e4a1c4f1a0c8ccd0d61933e59655f9082871d0711fcbf8bfa": {
@@ -735,19 +721,9 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "base_0x58bcfaa7bc749532484b7a8a3ec8f770c98c3d71261f6299b0051ae8933d3467": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x5a4b7360a5f52764498844a06fd86a985535aeff82468c44b15acb110790230d": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
-      "observations": 1
-    },
-    "base_0x5ac4c9d63d12b624eb69c4dc600df1b7859e6e928e855a0e68c363110c4045c1": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x5b7dfa960c3e68491bbcea2c86f4279e75e72c17": {
@@ -770,24 +746,19 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "base_0x5f88446dfe70fd33b6504533aaeed565893d59f1f21ea0a049c07b3396a5d308": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x61626f1388230ee70b0a67245d31aa8042847c5737c6c1328bf94c5abeb60bcb": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
       "observations": 1
     },
-    "base_0x628b9593923e21753b9c6bb4a845e60c0c14a26ad552fe57deed88e025718ab4": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x64d8c8996f3d19f2c5c88192223353afbaac9be54cc4fae2f85da49ff0273ab3": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
-    "base_0x639b47cdce99e538568e31ef3f2cf2153027363bf27e7a2cbfc533b6a8ae2bb8": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x64de617fb645f87040be1884d6217b520eebce6f": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x65aa9da38c48e7bd89b0e4e28c9d463205dbd762a621fddefb29611ebb5a8801": {
@@ -805,14 +776,14 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0x6682a573195e27294829b3cae5583babca43c86e9ad085d08aeda5cc39937417": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x66bac42c52ebc907cf2d95996f6e4325b20091b9598f2f49127430ebfdebb770": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
+      "observations": 1
+    },
+    "base_0x6712c42e7ba8812da1610d173ea2258f8fa2776e": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x6751ab848ae0e604cf4046f312b41532a4c034db": {
@@ -835,6 +806,16 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
+    "base_0x6869b9016937d97dfa595eb25bc72880e821b8eb22be32bc79c623bc64ce8a3e": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "base_0x690a5fc55fb2bad1e50274b64a5420de557ff1f3791d3d63ab4824ec2c67684a": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x6c740aa7e6cd8685f8bca4489ab791af87857548e9df2dc8cc07bf48e929fd01": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
@@ -848,6 +829,11 @@
     "base_0x6dc4accf396b5d2ef4b5c7ffe3aeea76c7e92855a3544ddb38b060784200f569": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "base_0x6ebb69bce5545a6bc4a0d22861b8e362ac4a781409d5ee982fdd31a5be640eb5": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x7177b128ef7547c65db510420097a0ce6394faf1": {
@@ -880,6 +866,11 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
+    "base_0x74f0858edefc21d8291bb5674497b5dbbfbeac906a93d30adc657b148dcd7a6b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x75829ad4352b449d8589997430ac5db45400a8fb": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
@@ -893,11 +884,6 @@
     "base_0x75d13dd5482f177f4378db93989fcd317e07a2b1ddacc7a522d599a4bd3736ea": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
-      "observations": 1
-    },
-    "base_0x768bd6e261c6caf7586fe73f2a9ef31549a7cec933b6a3752cd1dc35d031c620": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x77ab02788234126bbe62120ed11077740e6e5141": {
@@ -915,11 +901,6 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0x77ec9d70595a698746a6abcbfe9921d1b98c297e28511a76db9b3438907df780": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x792238456139c4fffe4845ae610d45a0d9be91a0b3cd1e5b7a30312c886c08e8": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
@@ -928,11 +909,6 @@
     "base_0x7aa08fa53fc133ed1fd6c6f368012cca6d84ab32": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
-      "observations": 1
-    },
-    "base_0x7ad62f13300dc62c01938668e6244616d4502d4140742ff22f8ed3cc5e910062": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x7b78ec644edc249213b542e3c9e1cf0be167b90b0cdc887353412a9ada4b8a89": {
@@ -953,21 +929,6 @@
     "base_0x7c1e185c055bca7e67122e9801b21b5aa678028a": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
-      "observations": 1
-    },
-    "base_0x7cfe94eef6b44449f7c26e03d58cbaf37507b85a085ea72193363d532756c942": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "base_0x7d4a02d8b49e4dea046e97dc5e00f03d60c7996242c2a110f66d6a3c0a346288": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "base_0x7d57a5f7883181b73209a0df3a8c6e7892048ae91e983b7f0eb5aeaf51ac5625": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0x7f5594e13fc7df2ddbdd03f78630ffe344548159f506e18d3bcbbe2d0d94f4a4": {
@@ -1000,6 +961,11 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
+    "base_0x84895ed5aea4854532391a8dab28a283167f30bce7399e449f8416229525d570": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0x853235d9ee6ad3d246d933cb00d06b0e42dfa1739cb830058a017fdd7c478d93": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
@@ -1015,14 +981,9 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "base_0x8655c06ba5b370c9a1d0a987eb0949ef776e5051d1a6bb9a1904793cfa60b1d2": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "base_0x88fc4b69df1fc90f766e218fe4fc916a19596295fc4da6e7bf75b7fb3843085c": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x86bd572df6dcd610509a7a895de9e24a966b3ed734a2e1a1a0f117ea3f3fb5ad": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x8936f10d524c5fca80df587ddf2a5565f93387ae": {
@@ -1145,9 +1106,9 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0x98853e9b17567d16beec8bfd9f50d42fb8f38d2040e9f59a72f821d1d2317872": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0x9960e40269ed286dae61312633d4a70d463701ac": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0x999ebc4afa389df45a1b848aaa66121c1ca2a3b3": {
@@ -1195,11 +1156,6 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
-    "base_0x9e0e269912627ad31b0cbaa49faf676cffd8dc596548adf8ae53084170d31a16": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0x9f3f40acd23890634aeca3ab56e6c8643e3205075086d45795863b148967103d": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
@@ -1228,6 +1184,11 @@
     "base_0xa4079697f01a046b282edc3aea899efffe979d3e6b53e7856c93e50738da96d7": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
+      "observations": 1
+    },
+    "base_0xa414cfbda1fd15718e4fba4b65993bc6078f212e": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xa46ceb30c838112e00d3b78dd0a91644fcef2ab4f3db9307e3562af1cbb5d72b": {
@@ -1300,6 +1261,11 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
+    "base_0xadffb46492c80467075984d96a7fa69bcce513e5": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "base_0xae83da9295accc085a21eed380bc6fd2734a5d11471b25502749d80fe13c573d": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
@@ -1320,14 +1286,14 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "base_0xb1bb57ac8ad550794a86b179e4079f853261f31c": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xb2f1701f8d714e4fd268b50ab55f7b770425d31844e5767e65e01d6caa90eeef": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "base_0xb3c03d892e4abe89d027eda64cd597e994063010": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xb407131216b5e2f742041efb8fca54c6e2d8377d": {
@@ -1360,11 +1326,6 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "base_0xb5db1cad1549036947522ed60ceacbbaebfd2354b5c32757e31f827bf848bbd8": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xb6a6a97404508401c101035099bca08327b53a82c53b545b1eb9fd17f7f16bac": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
@@ -1385,9 +1346,9 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "base_0xb9cf9e30d1c7bee7f3d6fbca59b23f11b62e7fca43e6a63e7d3114c696c0f845": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0xb8b0458c6d62d89dd7b975610aa29ba93711267f3c1990ff0d0154e25aa137e4": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xba7e3dd1b2aa360089d656e08d1aa868c307ccbb56b223aa4c263b417655578e": {
@@ -1410,14 +1371,9 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "base_0xbd48f635b9988e614287716edea6791ac5fd4e0e630c18f5900993d66a7cc27e": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "base_0xbd57f3063c7c6900aa95b05f049f85a9c8f78d3cd53d2ba9e77903279918ceaf": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0xc0c5caf5af88d278ee52c366d4ff75c4a626694bcb007388c7398dadc016c9c8": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xc0c746639ed7f93da7ee401ef40c8cba16dd34a1619d7728b5409818f40fb608": {
@@ -1425,9 +1381,9 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "base_0xc13e0af8cc65997c39e893c7b2ad5f3902b1996ab76b521716ddc8ba8b8a1b8b": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "base_0xc111b8289cc768b35c2cee373a6dfb6f29268607c6d00e63ab1d69fb4d6a1696": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xc1cdcdda800993b325e383dd5d9d7f5e9ed4ef97": {
@@ -1458,6 +1414,11 @@
     "base_0xc414e11a040c3cd03886fb75f2cc056095f1a80e": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "base_0xc44950aa1d2bb80609e75fc3d19c6e7196d86221dded6f5938cec4de5bc26106": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xc452d6caf26dd6d3aa0dc133ef6c81daf76d69f0b5523a9bfb96e264750c17a6": {
@@ -1610,16 +1571,6 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0xd6ab8ec3fb2e7aa606df8506de0bc823abae013c7f648e3cc884f3d27a05de55": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "base_0xd907774b3c7eb166d7469e26386577951bee987c3f459e510d1f52bd85fe23f3": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xd9c69d76fb95bf2bf94da0a5c184e1d07f2a9fd57461544b524b07d811bc5fb0": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
@@ -1653,11 +1604,6 @@
     "base_0xde074379426e1f969233191ab062bacafe9e7932c3b2b619dfc5db5582b2c082": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
-      "observations": 1
-    },
-    "base_0xe0e015a061079a1c9669b8c918668dd7a38f4a3d2e5b4b729a5f2a76f14162b1": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "base_0xe1522807777828a042832dc2d64ed5e5db3854a6": {
@@ -1700,14 +1646,19 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "base_0xe5c1d28b646eb7aa1f44a2ec3b7c3c018212da79": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xe6d9ac49f933e368d11291aac71582608a1885ec042856af8b1b311d97a5d7cc": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "base_0xe840aecac402973a4b6af3a90c524507d832ac5e": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "base_0xe84b25ec7f32f94f66b70a942eb4100a467b4226": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xe8fa71996dff6c1dea83ae02d6bc8fa62813d5c9a61cc5ff080332f8384db1e3": {
@@ -1738,6 +1689,11 @@
     "base_0xea9aadb1c3e872d92fc5ba55408dbfc1ef543752e5c45eed56d74ee0607fcacf": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "base_0xee2cdf9075b02b3170a81b42c483c57deb054c51cd07316a75cf6044118bd548": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xeea2eea77150911bb3de512c327a5c6f2306e75fbe5a13629a6075e3d2fbd503": {
@@ -1780,11 +1736,6 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "base_0xf195d195dba796b2e9015ead126b6cf14d18f529": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xf1e95491b628d24398706ee6523c5fe30c4c278f5fab3302f669bf258d4b92c5": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
@@ -1820,14 +1771,14 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "base_0xf7c2c477e37333a307903e1ad4b043123ad87110a98d7524322584359027538e": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xf7cbda765870063743a20d32d9ced1e3346147e3": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "base_0xf8137be1643a4c64b035d4012508b4bba8e169f25590037fd08d34cbd8d6c94b": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "base_0xf89642191d4681c91a5707bf46ea240043f94324e5e0879512dd97e48ed0d45b": {
@@ -1895,11 +1846,6 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "base_0xfe66f90f4941fbbcc3fb05802a71ff640d624b6b": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "base_0xfeaff67da613b106dd4daa724bffcb3e015d34c0": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
@@ -1910,14 +1856,14 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_27RvvEuo1JcQu4UrCxapoS7CMjo74cYqhE1YemroSaCv": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_27zgMCCxFZ4ioch4gdFHZEVHcDfYcKc5zvgriJAbjgWo": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
+      "observations": 1
+    },
+    "solana_29L2QhzKMb5HNh3GzPyqSSi1NVycpcRKVeBeBptVcEMM": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_2CgpdDXawjr8SUJ1xPy2nwr5A6FZqLEDi6BdStC19B6V": {
@@ -1935,9 +1881,9 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_2J6c1LtVo4fZv7VRomYtxPMz9qnXdHTBnmo9wbpjuutv": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_2JwQYJXAweWsZHhwUixEKWf7AFhBZk7hmR2kGp1U2EPA": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_2L2szJfHiqTjB7ypqHBy9VmoPGT3fCz6r4dTngCym8sv": {
@@ -1970,24 +1916,24 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "solana_2b1gqbYtiq829UVou83nqYaKaKo8JjognD3CUKGTeba3": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_2cKvWNicr5SidXokcPRupPGPmh2mCH6MQNRnGkDdeK9g": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_2h7xgdGMUJHhoaNNDSCEM5QLW2XxKv7C5mZpofWoWoo8": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_2mX7XeZGeCzbDfEQ29RgDWxQe4dQLzpqCKHdZAeZJU2c": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_2nu6QSMYWrtYUisuJ8dJrDkLRC8Zv6Nyb4bnzbFxw61m": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "solana_2q4cY9WowD3tLF3GdygF7Yh4cwYk8sYFFhTThRVuw3kD": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_2v6qUh6ziVp9E2JLvxj6z4W1D8okeWuXVnXGXhpigQTW": {
@@ -2005,9 +1951,19 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
+    "solana_2yxREDw4bJPfzPQAeYWnnLhFyDPy3ejss3HxxdpJ5Rqj": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_36ytYE9uxU4TLqDeoTVpQn3iy4M3JBXkyBx3Jc9L9udy": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
+      "observations": 1
+    },
+    "solana_3ArwmeZJzP4ABjmSujBGt7PscCMBVk7de7MojySbayzn": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_3BJ3G9VWznK7g6R9cN2rmkiLBpAv1bWaHpnZaL4nXT9R": {
@@ -2018,11 +1974,6 @@
     "solana_3C9nYppvHMdEWVSuac4yra4mjFXQRcbDT1zSmMzxCmmD": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
-      "observations": 1
-    },
-    "solana_3DCon9DbdPRXHnM9Brdgm43ui9U3nRkoHf2FzzQDuLij": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_3FWDnPnZMR5aM4JtGturzzFhVi4fQn2yY4R5kEkqXxpA": {
@@ -2043,11 +1994,6 @@
     "solana_3NtE5kVfuMCHXiUdAWLw25H68B5UJi8zXsknDtffeehK": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
-      "observations": 1
-    },
-    "solana_3QaGUYqmf9FiHYsEsaXv4Hkw8d3RHXBg6P2xynpMCKAG": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_3VsBe3FncTtj5WW9sBNeBAfEVwaBAQbyY3nE7LyQHgBi": {
@@ -2100,16 +2046,6 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "solana_3uU45TU8e2wxvRb6T6N9wqb6XnjyD9F7SNCEhN3fYPLo": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_3vFxBrb5TPmTFB5WUydhJgrUea7RGe5cucNxw3DxuF8o": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_3ybfPMYQo5rxqanBTRAfhtqmLyE1f3VdiHU7Bu2LkFec": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
@@ -2120,14 +2056,14 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "solana_43oDwH3FyyeWXYWDF2HbVkug1C7US1MiVNngkje5V5S2": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_46CaxeUX4xuGo4RXkntSmBXCqGwCZvGLjdji7fvGrYtz": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
+      "observations": 1
+    },
+    "solana_49WdzPgR8wvQ31iMwg3W4svnvgrkYJZRQSJf7CXKcAfE": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_4Cr5hjjbDf3RsE48MtHWMFGfucrYeuMcYFZo6z5SjdzX": {
@@ -2150,14 +2086,9 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
-    "solana_4Y56wgZsfEXpXf2tqz1wsuYV1ruKaLL5qpmgQDro1fq3": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_4burjqecvDYEsVDHNPAdd13uQSPTz5G2nKF9FqN553ys": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_4Xg3YAWPHJTieRDBzswcXcEBfW5AKusAHp6TEjqfj1e5": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_4cmc9gqL3o1gtnqbygi7h949onB9DYknwWW2qL5rmZZX": {
@@ -2175,11 +2106,6 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_4h1nKGUoskNcQ6vAfP7A53mmBoQLR2Ad656WHow5rXMD": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_4jqAnWz6snj7SEXE9EHe8VcPC2nRrNVvEbuk6kK91M41": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
@@ -2195,14 +2121,9 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_4waVpb5ChtJLPLyoPV5bPzXdSGpyqjrQxv6yf4Yz6i44": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_4x2oFCKYbzs6gKWnV2Mhw4ZFJUHLw9fPrWzFApSteeAK": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_4xC9YbDqVDbAdhhc1hzxPB1U9ZJHz3Vjm7MdDgmadA4S": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_52XLRyoSAkWBVMLshbrdsw6JrVwwSFtm254aRM6MPgai": {
@@ -2215,19 +2136,29 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
+    "solana_56xpxg5N99VwTxyyGr7qWUFxYzPFzLNKtQQ5wrA1Tc27": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_59xB73vAmm2gvvwjWk6oq941vHkgK1fJE6vXQuAU5o8U": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_5G3c4U5N7KEsvKcW7fiHaUHzKC7LN2gNa3R2LFa9ug8T": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_5Gnjw5XHnkThtbJXLBAdJaLoqh9RwF3wvLdhemos3TWv": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_5NR3bbQYEQTDbZyuJ1UNrvMycdd2SSJrsFiaWJVWCd78": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "solana_5S4zaBP65aibfdxpCF6QejeJ74bf7JDE2wB1LtWwJjB4": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_5SqutH96yKeP6WumMDDSwaEDt8MDPRddd9xTQwTS8fDS": {
@@ -2280,9 +2211,19 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
+    "solana_5wXjqN9JnK9vbCsLWSBYWFihE89FoDiYtpvthbksV6hT": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_5yrWZWt41Vr7V2EHYr2v3qwWCvaZes9RKKxgm3pJUj8F": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "solana_5zsez272v9p9umJjC6P5nxonFdc8M77uXHAY3YT3KtjY": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_65ZprGhtWzp7DANZJsnUyYRPKqFaWtLeTF5HZZpixfQc": {
@@ -2360,6 +2301,11 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
+    "solana_6tdNQNWEzRwgeDb2Le5TSk53XXggxf4guT6X2AnVz4P2": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_6tnWrpTd8VY1Cs4mdX3beN5pjaFCHUSrZr7pJJUM83Mi": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
@@ -2410,19 +2356,14 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_7mFAiJAHG7VsdqGte3Z4X8YQjP2KMr6m8ex54SwK6yFq": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_7n2uiXLNBjeh1UMiHbiWDh16G4htBjWsrK7EA4HhNSnD": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_7pak86KfYTb5SqHCjH9UT84U8H3jdpuBtYzajXpgjqQV": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_7pd2qXhtCHUwvB3P5555iat495Bdm6nmLjdzCnPE2KYK": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_7v8CCata49ZuN9ZWboLAUqAkbf7GXuj8C6hs5wnipMVg": {
@@ -2455,6 +2396,16 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
+    "solana_8JDAdCSorYDbwvn1LSmBU6Q6mHXr32VRbLkApdyG2dJq": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_8MZTvxVQBRiHZ2CUoLreuw67azBCesDxdH9Kh5S7f7cd": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_8YTFYdfJXrZ8mm37YZUXmN3RfDrj9BNrYYYQxjUZH9Db": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
@@ -2473,6 +2424,11 @@
     "solana_8f2M4czyeCHaVV1Poi5TqdCNsP7rdEpbUF1CLLPkwoCZ": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
+      "observations": 1
+    },
+    "solana_8hHqKnBW1ooRJPVGeLMoBWbFeJmohT5rm9JzX5KCoxQK": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_8haVV7h5QpkgYK7XiuqKidc8MDeUaNgieAgwBxc6n5ec": {
@@ -2535,19 +2491,9 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_92XqBmxwDtrsDJ3CzmYB9DfVyffyxKXsQutu5RuNbuSU": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_93y3GcqfemqPvpfAZoY1LUcZogXMsFAHKCR71n6Wn1GC": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
-      "observations": 1
-    },
-    "solana_966FECefegFLeWY8Bdip7tU55XQo3BU3JxzsdWLQwzm7": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_96WfCz1CNdjFjqfwdmtiQEka6eRo2kL6XZaaPnBFPT7z": {
@@ -2563,11 +2509,6 @@
     "solana_9EVVrzFtNq3QWkEnm4QWvzZQdWNh9Q7GbyR6ECmkbKgW": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
-      "observations": 1
-    },
-    "solana_9LGmwpoivfNsFAkVJBzZMS7hJpLTrdTcmz3zd68oPs92": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_9NbQuEPT6yN5FHC7jwGNokR6tL8JfB8nJkjr8kR7Dx39": {
@@ -2608,11 +2549,6 @@
     "solana_9XERo1eaRAhokiwtCp8PsWkgyR6suH49AVpKyKYYaMf9": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
-      "observations": 1
-    },
-    "solana_9bvUGs8Dj8QTmQkXeJ2qGsHfS6DnBCLy14WyZTD1KQZD": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_9gqQHJghf1hf7hSQb7jXbSs49FDNfzXsSZijC9qdrSKQ": {
@@ -2660,24 +2596,14 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
-    "solana_A5XL7E9cfeDGiELMArycMeJaACbz5TbexAnyvTYx81mv": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_A6XkUkLePJDrsNaxG5ZPWN6EJxE4cJNxXGv98fhSzqEq": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_ACeamzvunCdDrCeJ1PSdXt5PzDkba4KKMqU7pu45WxG3": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_ADs3BnBrDbCkazdx2xtoCvKr9buVAXJnkUvNHT7xi99o": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_A7f8dFyuvx8JfN84dCfgJSLvhE9F2BAL5Mk8dFCeBS19": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_AEK4uUZkh444jTkvTq1JGtzvxutVthpc45Jbqcu8umpY": {
@@ -2695,9 +2621,19 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_ANRE2HoDKiYiudnvbfSoVQViG6fZfbUMEShY5ViGs5D": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_AKpWCscogCkp9q4Sq5PUB1zWLMwniorNdRKqwdGLGdJc": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_AL9Fetjh1RK8bJzFLQu8H6JS8YbsTzDEMXvMUuu9f3XX": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_ANea2QizCrSuPALdpnGb4i8hdLA3gQq1D9zVXCjYTFUD": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_AP5QCGtGPya9GLwhosRPLvP6E26h4fJyqcR1jTVyvtTE": {
@@ -2735,14 +2671,14 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "solana_ApFBhwnvx8Y9EN3DWXjP5sEJJDtYoq5VyC3trg8ZkNi5": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_As5D5vF9sBefGv6fPPvBPCw3ySGUrgXQWk5zf7Hq6JaE": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "solana_AvDBqvoMp4z7GX8MrRw8JetWAjKqGsb13eXhW9PFaqN4": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_Aw2V68aWowmsQEayJp1KEb9oFzPvQq96sLUMyxyo9jCN": {
@@ -2763,6 +2699,16 @@
     "solana_B4Rt7PE4pgTm5n4s6khxif3jUFRNUMaGkKazWXANe15w": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
+      "observations": 1
+    },
+    "solana_B7JnBnK5vWPrWbHxNec53hktmjtQGYkSyGXE6gJuExvD": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_B7NyVrDKE3u5rXC4nKgoHPFEWYbFAv6517KqU74Jtgzc": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_B97kD6uKNATo11MEwg13cJwJbjyYJCV7ASVo2pApURXC": {
@@ -2805,9 +2751,9 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "solana_BPMxX6ooVbih5x8pGxQ9KKQDArDkxaJV8E3soJmCkyE4": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_BNnFAviErHeAy8fDMiwRaQSaFcF9bQzCL8ASWdFaKEYZ": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_BQg6KtR78d2j9aQxvZsh2ZLHaMcZiQwKjdAHYNUb49R7": {
@@ -2828,6 +2774,11 @@
     "solana_BUQS8huMBqR4Yzuve6KMswuZs1wnwLJzQPwghDsDc1YN": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "solana_BUhovmMGmX5rnh1EqFBVXoGtJ8xsB6YwiryuPLpG6UaM": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_BZb69JZPXCefCVxnsnbJ9k5zfu9QULCYZXWZTRLreuuk": {
@@ -2878,6 +2829,11 @@
     "solana_BmpFchMUeNJB8DeEFhp2t6sJEhiAUsAXKvgDkMD7fAzo": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "solana_BpnRUiu8pttHNwkLHfD2bQ38zyB8djBEHCy6TDptmYCw": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_BqCLNvfsHX779dR27Zc1tYAAnQUC8vYSaHdYzo8VUz5H": {
@@ -2935,6 +2891,16 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
+    "solana_CA91qm8RKGBBXjWwPYd4QfYau35cEjFqP7Xa2bxD1qQ4": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_CBE8fjhm3BKM6V983F6XCJErHn1prfhv8RzxxdSEh4CR": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_CCeCf3yT2HMkTV4jM3nNryAHy8NPPL8f3ePiVKBXn49K": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
@@ -2955,6 +2921,11 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
+    "solana_CP9Pwn2bqp8eEq8xuzx48CpLDyaPLEmYLjFxhvHnfbiP": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_CZLdeX89q5SZYouUfnk8jkR2WyaB7QCffd7hTNfBgKs8": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
@@ -2968,6 +2939,11 @@
     "solana_CZsFLPF9xUCFMAuvngLQZJsUw73JU3rduSB9syUjVwXB": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "solana_CeXp2WubAYqsCyfKDQSyBYRqoCWAt2cb3XDfNqyYXMvB": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_CgadJhRjqDKUd2GJDApZA6ihBpYuwZk2ppaS4pU8X5qN": {
@@ -2985,6 +2961,11 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
+    "solana_CnmdWb3KR7sCJbc6YaB2CeHmnGww5nvdxwVqxVgip8Ur": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_Cnyr9hsEgYbUVqCHpWcyraWV8o5o783awG4dmwQxZYPb": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -2998,6 +2979,11 @@
     "solana_CsJx1bmCPJ5XiCXCjSkp2WcTCd5AepKZzybk86p8MpjR": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "solana_CtiHngerQVBfwt3YAFdQRSsxCmQJykTU8QJXAqhshphf": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_Cu1qD2qqWXy5e9wk7n2kyH9Cz7ngcxyCw76SxKPvgxpT": {
@@ -3025,6 +3011,11 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
+    "solana_D8v4h2UDf48GvtnQ1Fn81d7FHJz9nUDcSQUCCRZwQaKh": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_DFcoaB9DMCphMM3nbns78D6KqoJXH7zoD1taKEpPLrPb": {
       "first_seen": 1794091649.348928,
       "last_seen": 1794091649.348928,
@@ -3048,6 +3039,11 @@
     "solana_DPjp4Smqr7UFTwoF7nktKhY7fXKDG81qtghukrcxAYJG": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
+      "observations": 1
+    },
+    "solana_DSPhZ1qWjezQiWZCC9Vp9xdsDtdkW63LDw2psM1b69Q8": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_DXgMLBtmqgbXheqFR65kKWE3hD7tKzb7rsm9nwRfVPAF": {
@@ -3075,11 +3071,6 @@
       "last_seen": 1794192991.0535824,
       "observations": 1
     },
-    "solana_DfU514bhSHPYswSALiwTvQwe9zEfCmiZBgBzfCggaxrj": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_Di33AyJdUdbcCRA84HaCmgZ4ShdVgh6eFotY3YBLaN1F": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -3100,11 +3091,6 @@
       "last_seen": 1794180573.3911178,
       "observations": 1
     },
-    "solana_DuQ4MZY6en38FFaucT7E91uReuXiraXww26pYLgcdNrW": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_DzirBN8keYk9mXUjMG7Wypwd6VSma3uyW82DqW3cnnU1": {
       "first_seen": 1794127511.154331,
       "last_seen": 1794127511.154331,
@@ -3113,6 +3099,11 @@
     "solana_E36euCjbu5MDw8rcWNr3s7c4yENA6duq5o3jnkwNRAdo": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
+      "observations": 1
+    },
+    "solana_E5JtvZLPZGv1daBKoJMesWWs5hDAqQvN6uVhaE3F6Ee1": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_E8gEXUMpk4FehEEc3U5e546ntm2mm9ER5ukWZRyes7CN": {
@@ -3125,14 +3116,14 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
+    "solana_EFpfENScTEYZw3E5ng6U2oSupxah46kdNUoFB9qXPsZv": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_EFu8f2dWCvguDzvh6Cc6mHd77x46PMtHBu2CC1UN4ZZH": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
-      "observations": 1
-    },
-    "solana_ERHZ1qP4iHCwSkmApscLFmiw5ZGwHx4jGX6fK7TTATQx": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_EX5AASPmUtUWYUWMnVjDqQG4eZifWhh7xPA18mxM5jzp": {
@@ -3160,11 +3151,6 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "solana_EkPpWeY6VB8v1PUahbLpjj9y4foqDzcypRqNG9LvrRSt": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_ExDmQDSfYgzrNdufSM2xnTQeAKi3tHDjjuKh1rWmu3k5": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
@@ -3190,9 +3176,9 @@
       "last_seen": 1794091649.348928,
       "observations": 1
     },
-    "solana_FK3ocQ4DC3f1PvRnDAvXNL9K4FBwECVLqkgQoqHihPLe": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_FDw1EfMLpp8MHKsgJgf8AQbDHSgnYcmTMsDXnzcr6sox": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_FMA3vMsf1aDKLJwN9pEenn9i8xq5bE9UVNgof1rjefWY": {
@@ -3210,19 +3196,9 @@
       "last_seen": 1794103010.1170702,
       "observations": 1
     },
-    "solana_FTTAa1it3zYVmHWBAaHS8X3UHcfsUPxhkLFSdEJFZ9cC": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
     "solana_FToUCqeHwCnhXb7mRVYx4gJMUH3wGnz18u4GvZBsAKhn": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
-      "observations": 1
-    },
-    "solana_FXuwmusFLohv5p9eamQiwjYJzgienYAShdzLw9Khenu7": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_FYA8JLS7NR4nKn7ABnmn8tjHsnBED6PGj8NgEzajJcDj": {
@@ -3255,9 +3231,9 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "solana_Fz9Der2YbpF1CGCXq6AVEwwwTo976JM1dG3oKdBF9wQp": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
+    "solana_Ft99YVyxkvuLQYEgrRCfRABmeVWHzgHSuBxjFTXnT6T4": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_G43XrcszEQG61ZYVxmEddCnRSFLqXJ26RjcYMazvMLup": {
@@ -3268,6 +3244,11 @@
     "solana_G5BJyfrzxR2ZBdupfEZX5EoGaJLPttMQLZ55YMxgg8bz": {
       "first_seen": 1794152223.2188585,
       "last_seen": 1794152223.2188585,
+      "observations": 1
+    },
+    "solana_G5NYJypt7ygN92uaYuxRGgbz7VvmrskAsi4Ady2Dbing": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_G87rh3jS8f2f7BkfK586VXvUP5eJeHSkUA1mbUzq3UMo": {
@@ -3293,11 +3274,6 @@
     "solana_GKtJfrrv1dQb8c8bsMo8mVdyiXt7VMCa5bxHFAyXrdE5": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
-      "observations": 1
-    },
-    "solana_GPK3GYZKYVbwXd7zWZdX1ZyTuGij4TRK14hNs4G1Vaoj": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_GPKPWHmWxjTAipzJk5chuDiccAqMgNWzZSS6CLfqgBLW": {
@@ -3333,11 +3309,6 @@
     "solana_GX414BMkj6HEgvJmetZDBdhUjH2ybRzgeTdNK7qBh186": {
       "first_seen": 1794167812.5812118,
       "last_seen": 1794167812.5812118,
-      "observations": 1
-    },
-    "solana_GXTGPfGsk54orhhKwry4zugnKsEMnfYZxhrsaB34StTe": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
       "observations": 1
     },
     "solana_GXwmLLKbpey9dBfJxscw8keJSYep1SMGDFqGED217DH": {
@@ -3415,6 +3386,11 @@
       "last_seen": 1794152223.2188585,
       "observations": 1
     },
+    "solana_HAZR9iBmEJsgbtBqEZWHNXBPMqy7oJiutxPx9Yvyx6jR": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_HC4XC6puZm1NiJeHZtLDWeHRTUoygZmUxy3J9oP7FeLJ": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
@@ -3423,6 +3399,21 @@
     "solana_HCBtbaQRxk4PuMvg7RaUGjRNVQqpDUa3pvjYGqz9GxR2": {
       "first_seen": 1794103010.1170702,
       "last_seen": 1794103010.1170702,
+      "observations": 1
+    },
+    "solana_HCCsVSPMAGamKtMQGLyoEQBsLgeeWZZaCpwT1hDAKMbv": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_HCy42dCcdDV8xr8KpmgcKNmRvsS3GSksGeuAwJnWEjpG": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
+    "solana_HDAcFoKxr3bZMDs5FA4RKeXWdkr1qaeLdSsQwshFL8Sv": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_HFCSiFzBpxjQduq1kfFVUURr7Gvstuafitti5Xc7Rbse": {
@@ -3443,11 +3434,6 @@
     "solana_HMtsL8nowHBb2U3LUq9r9jqsSA46pVgqQzDV1ue6pJdF": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
-      "observations": 1
-    },
-    "solana_HWg7Mwni3xqUEnVGw5jvqUQSJW7w9VLQZJUtr4XMZrys": {
-      "first_seen": 1794091649.348928,
-      "last_seen": 1794091649.348928,
       "observations": 1
     },
     "solana_HZQsr23J2y2suSyzSpJbQWNBwFJGaESrfxY2GNKGXgXG": {
@@ -3485,39 +3471,9 @@
       "last_seen": 1794127511.154331,
       "observations": 1
     },
-    "solana_HxKRGfNBugZJyS8Eoa741ktx6Qn8pM17b6Gib6s58SEk": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_HxrpsGAzhgucT9Cr2E34heUNMY8J56v5wPHuWKKGSFxk": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_J2WT3yzmKcbUkTsCXwULWeE71M4V8uUuG7hDq57vRKYa": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_J2fLTgfhdhD8xkJosYvLapmocreJh2Tv5PC3ZwUWChLZ": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_J8BLajZWke8Ng4PZ3xFWdyScbgDHYMW9KxdwNLoYmjYn": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_MhDkTR4w9ynK3Wr9WubfRv3ezm4UZDKAuwL5UqiBwWn": {
-      "first_seen": 1794078767.1540577,
-      "last_seen": 1794078767.1540577,
-      "observations": 1
-    },
-    "solana_RGo9WHAoJtqBAPDivYbXXp34bQPB3oyWsvWu6d3Wv3v": {
-      "first_seen": 1794091649.348928,
-      "last_seen": 1794091649.348928,
+    "solana_K1zQ8aragC4L5fpvkZBKVvGHws1qaZWGd4BxfE4xoJ8": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_RHbHsVvHjWPUMhMAS4zXo9gmUGyzEHQApRe2dMuDtig": {
@@ -3565,6 +3521,11 @@
       "last_seen": 1794167812.5812118,
       "observations": 1
     },
+    "solana_q5kJij9pSKH4mDJ66hzpBE2UPc8vSnpXDxQw8Vr9HLy": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
+      "observations": 1
+    },
     "solana_t7vbyuYxMRbkdgTqCVncbrWLt3tFNDsTQbbiDKbXi5m": {
       "first_seen": 1794180573.3911178,
       "last_seen": 1794180573.3911178,
@@ -3573,6 +3534,11 @@
     "solana_uFutrX7q8ZSmtBzxH6D16UXFE98eCW1x2xLegvhe7A2": {
       "first_seen": 1794192991.0535824,
       "last_seen": 1794192991.0535824,
+      "observations": 1
+    },
+    "solana_uhBRmZYKzPMPRhKqiobqd6zWHHmPEzvENC42ULvCyka": {
+      "first_seen": 1794222164.2072499,
+      "last_seen": 1794222164.2072499,
       "observations": 1
     },
     "solana_x9kdmhRNLSQNKLUdVQ7A3Lw7E8fq3Eo5abThE3uKCdy": {
@@ -3593,62 +3559,44 @@
   },
   "source": "GeckoTerminal new_pools public API (Solana and Base)",
   "successful_pages": 5,
-  "updated_utc": "2026-11-09T02:56:31.053582+00:00",
+  "updated_utc": "2026-11-09T11:02:44.207250+00:00",
   "version": 1,
   "watch_leads": [
     {
-      "age_hours": 0.87,
-      "buys_24h": 668,
+      "age_hours": 0.1,
+      "buys_24h": 109,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 705516,
+      "liquidity_usd": 46102,
       "meme_theme_hint": false,
       "network": "base",
       "observation_count": 1,
-      "pool_address": "0xa9f5dd8f62038215fa6cee6972efc4d0895575d4c423a426349ec4976c95c773",
-      "pool_key": "base:0xa9f5dd8f62038215fa6cee6972efc4d0895575d4c423a426349ec4976c95c773",
-      "pool_name": "ANT / WETH",
+      "pool_address": "0xc0c5caf5af88d278ee52c366d4ff75c4a626694bcb007388c7398dadc016c9c8",
+      "pool_key": "base:0xc0c5caf5af88d278ee52c366d4ff75c4a626694bcb007388c7398dadc016c9c8",
+      "pool_name": "Coinbank / ETH 0.01%",
       "repeat_observed": false,
-      "sells_24h": 106,
+      "sells_24h": 48,
       "status": "UNVERIFIED_WATCH_ONLY",
-      "token_address": "0x36fcfc9462a69382433500be9da847dfada791e6",
-      "url": "https://www.geckoterminal.com/base/pools/0xa9f5dd8f62038215fa6cee6972efc4d0895575d4c423a426349ec4976c95c773",
-      "volume_24h_usd": 208051
+      "token_address": "0xb787cc4bb52093fcad81e4d0d16f325f46438ee7",
+      "url": "https://www.geckoterminal.com/base/pools/0xc0c5caf5af88d278ee52c366d4ff75c4a626694bcb007388c7398dadc016c9c8",
+      "volume_24h_usd": 105376
     },
     {
-      "age_hours": 0.04,
-      "buys_24h": 389,
+      "age_hours": 0.54,
+      "buys_24h": 16,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 33910,
+      "liquidity_usd": 41258,
       "meme_theme_hint": false,
-      "network": "solana",
+      "network": "base",
       "observation_count": 1,
-      "pool_address": "7n2uiXLNBjeh1UMiHbiWDh16G4htBjWsrK7EA4HhNSnD",
-      "pool_key": "solana:7n2uiXLNBjeh1UMiHbiWDh16G4htBjWsrK7EA4HhNSnD",
-      "pool_name": "S&amp;P500up / SOL",
+      "pool_address": "0xa414cfbda1fd15718e4fba4b65993bc6078f212e",
+      "pool_key": "base:0xa414cfbda1fd15718e4fba4b65993bc6078f212e",
+      "pool_name": "GTA6 / WETH",
       "repeat_observed": false,
-      "sells_24h": 195,
+      "sells_24h": 6,
       "status": "UNVERIFIED_WATCH_ONLY",
-      "token_address": "AocgwuX7xemWVvghkEx9FacwXz4N1xhtUPhZKCEzetXp",
-      "url": "https://www.geckoterminal.com/solana/pools/7n2uiXLNBjeh1UMiHbiWDh16G4htBjWsrK7EA4HhNSnD",
-      "volume_24h_usd": 23982
-    },
-    {
-      "age_hours": 0.04,
-      "buys_24h": 232,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 20139,
-      "meme_theme_hint": false,
-      "network": "solana",
-      "observation_count": 1,
-      "pool_address": "jo1PyUUE1sBWCwi5fu8id8CMPDSZWCZtCToFr8E8hj4",
-      "pool_key": "solana:jo1PyUUE1sBWCwi5fu8id8CMPDSZWCZtCToFr8E8hj4",
-      "pool_name": "CANON / SOL",
-      "repeat_observed": false,
-      "sells_24h": 104,
-      "status": "UNVERIFIED_WATCH_ONLY",
-      "token_address": "Ht79rt858gCWqJLfEQ34ovdzNtz1Ab2hWuU3WopwJka",
-      "url": "https://www.geckoterminal.com/solana/pools/jo1PyUUE1sBWCwi5fu8id8CMPDSZWCZtCToFr8E8hj4",
-      "volume_24h_usd": 42652
+      "token_address": "0x46e3e18f4c6ea3d9a0ec18bf628334b0918e72a1",
+      "url": "https://www.geckoterminal.com/base/pools/0xa414cfbda1fd15718e4fba4b65993bc6078f212e",
+      "volume_24h_usd": 15500
     }
   ]
 }

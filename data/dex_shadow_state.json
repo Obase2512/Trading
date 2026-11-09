@@ -5,7 +5,7 @@
   "starting_usdc": 150,
   "strategy": "DEX routed-quote SHADOW, legacy mark positions retained",
   "trades": [],
-  "updated_utc": "2026-11-09T02:56:48.147174+00:00",
+  "updated_utc": "2026-11-09T11:03:01.082650+00:00",
   "version": 2,
   "warnings": [
     "NOT the Coinbase paper balance; do not sum these budgets.",
