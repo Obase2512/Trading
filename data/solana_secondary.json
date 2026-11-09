@@ -1,38 +1,21 @@
 {
   "leads": [
     {
-      "buys_24h": 101,
+      "buys_24h": 5119,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 26800,
+      "liquidity_usd": 28805,
       "network": "solana",
-      "pool_address": "741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
-      "pool_age_hours": 12.37,
-      "pool_key": "solana:741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
-      "pool_name": "Pitaya",
-      "sells_24h": 75,
+      "pool_address": "2vzjKz931prrWWmfAQNvt6UguSEVR6DqWAkyCGPJvRiV",
+      "pool_age_hours": 0.32,
+      "pool_key": "solana:2vzjKz931prrWWmfAQNvt6UguSEVR6DqWAkyCGPJvRiV",
+      "pool_name": "BigPussyCoin",
+      "sells_24h": 1248,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "Ao6rgPZBa12yHaT6Eaa7W35qDq1Zx3xuvKiNXmppump",
-      "url": "https://dexscreener.com/solana/741pLqu2h287t5GtbocQ1igzTKW6UByRuFFLLXNFWxvw",
-      "volume_24h_usd": 11898
-    },
-    {
-      "buys_24h": 3566,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 16769,
-      "network": "solana",
-      "pool_address": "HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
-      "pool_age_hours": 0.5,
-      "pool_key": "solana:HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
-      "pool_name": "Sheepcoin",
-      "sells_24h": 2717,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "B9mnvoCNLzxaz2EJsLwaSynAMxkrK49VXpFAYze5pump",
-      "url": "https://dexscreener.com/solana/HDy3VUtHzHB7vxkJBd3gFNLuQej2rcv3LP8ApWwxn1MM",
-      "volume_24h_usd": 200596
+      "token_address": "BMSFHPMiP4FVboz1oN7bcWP7U4yW3tqey3sDNGkWpump",
+      "url": "https://dexscreener.com/solana/2vzjKz931prrWWmfAQNvt6UguSEVR6DqWAkyCGPJvRiV",
+      "volume_24h_usd": 289935
     }
   ],
   "lookup_errors": 0,
@@ -40,5 +23,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-09T11:02:42.040370+00:00"
+  "updated_utc": "2026-11-09T21:25:01.142432+00:00"
 }
