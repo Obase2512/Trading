@@ -1,9 +1,27 @@
 {
-  "leads": [],
+  "leads": [
+    {
+      "buys_24h": 7770,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 26856,
+      "network": "solana",
+      "pool_address": "3SUrcjyuH4QXM95eeuHXdrj1Y6aDP47J1xhYo73YJU8v",
+      "pool_age_hours": 2.55,
+      "pool_key": "solana:3SUrcjyuH4QXM95eeuHXdrj1Y6aDP47J1xhYo73YJU8v",
+      "pool_name": "Vice Cash",
+      "sells_24h": 4776,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "AQ2gmhnqAiPDd2P6jgYrrVvVh8X1de2pBKPLKQbKpump",
+      "url": "https://dexscreener.com/solana/3SUrcjyuH4QXM95eeuHXdrj1Y6aDP47J1xhYo73YJU8v",
+      "volume_24h_usd": 502839
+    }
+  ],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-10T11:49:14.898543+00:00"
+  "updated_utc": "2026-11-10T19:04:12.894243+00:00"
 }
