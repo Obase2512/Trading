@@ -1,27 +1,9 @@
 {
-  "leads": [
-    {
-      "buys_24h": 5611,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 21911,
-      "network": "solana",
-      "pool_address": "5ULgTbrbXMWzoTnQmpurNZfQ3QAWxi1AYC5BqZmf4eMN",
-      "pool_age_hours": 0.79,
-      "pool_key": "solana:5ULgTbrbXMWzoTnQmpurNZfQ3QAWxi1AYC5BqZmf4eMN",
-      "pool_name": "ASTEX",
-      "sells_24h": 5240,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "H1TdVD6HwgwDcHjCMzhKqkvPH7smQxGe2eTMhXNBpump",
-      "url": "https://dexscreener.com/solana/5ULgTbrbXMWzoTnQmpurNZfQ3QAWxi1AYC5BqZmf4eMN",
-      "volume_24h_usd": 286993
-    }
-  ],
+  "leads": [],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-10T03:42:27.995842+00:00"
+  "updated_utc": "2026-11-10T11:49:14.898543+00:00"
 }
