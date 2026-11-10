@@ -10,7 +10,7 @@
     "exit_quotes": {
       "BONK-USDC": {
         "consecutive_failures": 0,
-        "last_checked_unix": 1794259520.2527895,
+        "last_checked_unix": 1794282164.843721,
         "source": "coinbase_advanced",
         "status": "ok"
       }
@@ -82,6 +82,6 @@
       "reason": "modeled stop-loss (-8% net)"
     }
   ],
-  "updated_utc": "2026-11-09T21:25:20.252789+00:00",
+  "updated_utc": "2026-11-10T03:42:44.843721+00:00",
   "version": 2
 }
