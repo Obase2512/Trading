@@ -1,21 +1,55 @@
 {
   "leads": [
     {
-      "buys_24h": 2468,
+      "buys_24h": 2939,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 26909,
+      "liquidity_usd": 40813,
       "network": "solana",
-      "pool_address": "HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
-      "pool_age_hours": 8.51,
-      "pool_key": "solana:HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
-      "pool_name": "All in Cat",
-      "sells_24h": 1431,
+      "pool_address": "3TJZY36ZzXjbPsoybVUpdMJeee9mVy1Do5wYet5gSG9h",
+      "pool_age_hours": 0.38,
+      "pool_key": "solana:3TJZY36ZzXjbPsoybVUpdMJeee9mVy1Do5wYet5gSG9h",
+      "pool_name": "Maneki Neko",
+      "sells_24h": 893,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "C493YhUFRt9zFgzLRm3SckCEXeouGse8iUoW3EeFpump",
-      "url": "https://dexscreener.com/solana/HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
-      "volume_24h_usd": 204534
+      "token_address": "6ut8rZUw8aroJCDwAXaGpmx2gcXvriGoTgBS6p98pump",
+      "url": "https://dexscreener.com/solana/3TJZY36ZzXjbPsoybVUpdMJeee9mVy1Do5wYet5gSG9h",
+      "volume_24h_usd": 188533
+    },
+    {
+      "buys_24h": 7017,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 33344,
+      "network": "solana",
+      "pool_address": "J9QzbZrfkZ6LCAhsCNUWvETR5TPwejbcCfHvceRUueKJ",
+      "pool_age_hours": 0.84,
+      "pool_key": "solana:J9QzbZrfkZ6LCAhsCNUWvETR5TPwejbcCfHvceRUueKJ",
+      "pool_name": "ni hao gato",
+      "sells_24h": 2208,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "4Dgjitjn8br3LcdcBnkc9tYJ8d1cnCCJd2nsVgzZpump",
+      "url": "https://dexscreener.com/solana/J9QzbZrfkZ6LCAhsCNUWvETR5TPwejbcCfHvceRUueKJ",
+      "volume_24h_usd": 224267
+    },
+    {
+      "buys_24h": 17393,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 31140,
+      "network": "solana",
+      "pool_address": "4xLT4kT5xznjvtntovKcQZqNa5EN8SodvkR2AQgEH6TX",
+      "pool_age_hours": 2.96,
+      "pool_key": "solana:4xLT4kT5xznjvtntovKcQZqNa5EN8SodvkR2AQgEH6TX",
+      "pool_name": "Bernie",
+      "sells_24h": 13196,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "8bTJDVTG1xPuP4GsaXVKCRrbG4mRehhn5AyFy9yapump",
+      "url": "https://dexscreener.com/solana/4xLT4kT5xznjvtntovKcQZqNa5EN8SodvkR2AQgEH6TX",
+      "volume_24h_usd": 1499056
     }
   ],
   "lookup_errors": 0,
@@ -23,5 +57,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-11T14:04:21.381293+00:00"
+  "updated_utc": "2026-11-11T21:19:56.802024+00:00"
 }
