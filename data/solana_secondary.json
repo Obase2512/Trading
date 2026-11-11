@@ -1,9 +1,27 @@
 {
-  "leads": [],
+  "leads": [
+    {
+      "buys_24h": 2468,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 26909,
+      "network": "solana",
+      "pool_address": "HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
+      "pool_age_hours": 8.51,
+      "pool_key": "solana:HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
+      "pool_name": "All in Cat",
+      "sells_24h": 1431,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "C493YhUFRt9zFgzLRm3SckCEXeouGse8iUoW3EeFpump",
+      "url": "https://dexscreener.com/solana/HCBPgX11o2aZ8CXYu2U51ycQp9kQVDwjrrETubeFbqWs",
+      "volume_24h_usd": 204534
+    }
+  ],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-11T05:58:40.984035+00:00"
+  "updated_utc": "2026-11-11T14:04:21.381293+00:00"
 }
