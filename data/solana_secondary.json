@@ -1,55 +1,21 @@
 {
   "leads": [
     {
-      "buys_24h": 10791,
+      "buys_24h": 2213,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 52964,
+      "liquidity_usd": 33630,
       "network": "solana",
-      "pool_address": "5jN7YxKhncGwi3njP5Z8M6YYBKkuhL7p2axLLG2DaGK3",
-      "pool_age_hours": 1.03,
-      "pool_key": "solana:5jN7YxKhncGwi3njP5Z8M6YYBKkuhL7p2axLLG2DaGK3",
-      "pool_name": "Ansem is Back",
-      "sells_24h": 6373,
+      "pool_address": "6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
+      "pool_age_hours": 2.91,
+      "pool_key": "solana:6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
+      "pool_name": "Fly Dog",
+      "sells_24h": 1872,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "AJFnmpiF4VTKeqEWtwBUarib5zKKbXcs594UyrMHpump",
-      "url": "https://dexscreener.com/solana/5jN7YxKhncGwi3njP5Z8M6YYBKkuhL7p2axLLG2DaGK3",
-      "volume_24h_usd": 842975
-    },
-    {
-      "buys_24h": 4084,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 33182,
-      "network": "solana",
-      "pool_address": "9zS98CuamdRwb9a7dt5uMMxv4Xzb697NkVofEBWHWMwH",
-      "pool_age_hours": 0.52,
-      "pool_key": "solana:9zS98CuamdRwb9a7dt5uMMxv4Xzb697NkVofEBWHWMwH",
-      "pool_name": "X Coin",
-      "sells_24h": 2389,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "3Pmrc9W82zF832W1pgTgUoPXvhufyrHueeJ2YgEspump",
-      "url": "https://dexscreener.com/solana/9zS98CuamdRwb9a7dt5uMMxv4Xzb697NkVofEBWHWMwH",
-      "volume_24h_usd": 280812
-    },
-    {
-      "buys_24h": 1458,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 32286,
-      "network": "solana",
-      "pool_address": "8JrY8TSh5bkaR87ytYgNJxipV4Mh5yzABEvJvuNPz6o7",
-      "pool_age_hours": 0.28,
-      "pool_key": "solana:8JrY8TSh5bkaR87ytYgNJxipV4Mh5yzABEvJvuNPz6o7",
-      "pool_name": "Maximus",
-      "sells_24h": 475,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "AitksCRn29wLXgf6AGJbcszX9maZtVg62D1bV4expump",
-      "url": "https://dexscreener.com/solana/8JrY8TSh5bkaR87ytYgNJxipV4Mh5yzABEvJvuNPz6o7",
-      "volume_24h_usd": 88479
+      "token_address": "5tePJcGmdKAoNVXe3fp2tmf8n7cmr5d3YBkYKj4Cpump",
+      "url": "https://dexscreener.com/solana/6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
+      "volume_24h_usd": 184884
     }
   ],
   "lookup_errors": 0,
@@ -57,5 +23,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-12T02:20:53.507040+00:00"
+  "updated_utc": "2026-11-12T09:59:38.916452+00:00"
 }
