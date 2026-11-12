@@ -1,21 +1,21 @@
 {
   "leads": [
     {
-      "buys_24h": 2213,
+      "buys_24h": 2556,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 33630,
+      "liquidity_usd": 18338,
       "network": "solana",
-      "pool_address": "6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
-      "pool_age_hours": 2.91,
-      "pool_key": "solana:6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
-      "pool_name": "Fly Dog",
-      "sells_24h": 1872,
+      "pool_address": "JPAeJeme2NhCYucA1h8QZgJjZzqJksHKAEaxrXENK1D",
+      "pool_age_hours": 0.37,
+      "pool_key": "solana:JPAeJeme2NhCYucA1h8QZgJjZzqJksHKAEaxrXENK1D",
+      "pool_name": "Hensen Juang",
+      "sells_24h": 1532,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "5tePJcGmdKAoNVXe3fp2tmf8n7cmr5d3YBkYKj4Cpump",
-      "url": "https://dexscreener.com/solana/6AbaCQx7N7SqXRqq6fTZvNtRakNhPigHyUjAYwewUnte",
-      "volume_24h_usd": 184884
+      "token_address": "J9t2LsAZLrNHocuvoyEKoiyS7RKXLJv2u9bnFJTCpump",
+      "url": "https://dexscreener.com/solana/JPAeJeme2NhCYucA1h8QZgJjZzqJksHKAEaxrXENK1D",
+      "volume_24h_usd": 198831
     }
   ],
   "lookup_errors": 0,
@@ -23,5 +23,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-12T09:59:38.916452+00:00"
+  "updated_utc": "2026-11-12T18:11:25.139956+00:00"
 }
