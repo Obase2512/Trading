@@ -1,55 +1,38 @@
 {
   "leads": [
     {
-      "buys_24h": 12849,
+      "buys_24h": 420,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 58381,
+      "liquidity_usd": 23114,
       "network": "solana",
-      "pool_address": "JBiZCH1K3VCdQrN2NwCfDgJCdYg8Vi7FpCH46zDH1TBS",
-      "pool_age_hours": 0.7,
-      "pool_key": "solana:JBiZCH1K3VCdQrN2NwCfDgJCdYg8Vi7FpCH46zDH1TBS",
-      "pool_name": "Bawsaq",
-      "sells_24h": 8952,
+      "pool_address": "CLpbpnsUP5hJ5LXHYMdTaBBxXQ4yTtS8Qh3EpM4kF9sm",
+      "pool_age_hours": 0.57,
+      "pool_key": "solana:CLpbpnsUP5hJ5LXHYMdTaBBxXQ4yTtS8Qh3EpM4kF9sm",
+      "pool_name": "BLACKOUT",
+      "sells_24h": 484,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "7dzdHo9DKx2dqnXBVXRyMUJUETQhfwFoV4NwcgfVpump",
-      "url": "https://dexscreener.com/solana/JBiZCH1K3VCdQrN2NwCfDgJCdYg8Vi7FpCH46zDH1TBS",
-      "volume_24h_usd": 927843
+      "token_address": "HJWMayjf5H6EzuNTbpk4uq9Dfp4P5CLnjZCpZvKHpump",
+      "url": "https://dexscreener.com/solana/CLpbpnsUP5hJ5LXHYMdTaBBxXQ4yTtS8Qh3EpM4kF9sm",
+      "volume_24h_usd": 175673
     },
     {
-      "buys_24h": 6419,
+      "buys_24h": 1699,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 34148,
+      "liquidity_usd": 15385,
       "network": "solana",
-      "pool_address": "3pPt2n33W9Q7D4rMX5ujEAGFYhBycrwsxdwekPoeiL3b",
-      "pool_age_hours": 1.13,
-      "pool_key": "solana:3pPt2n33W9Q7D4rMX5ujEAGFYhBycrwsxdwekPoeiL3b",
-      "pool_name": "first bitcoin cat",
-      "sells_24h": 1185,
+      "pool_address": "DtNckbWaxAQ3PgK9HP3yVGmTYjDr8DS1mScjeg3jkFyZ",
+      "pool_age_hours": 0.35,
+      "pool_key": "solana:DtNckbWaxAQ3PgK9HP3yVGmTYjDr8DS1mScjeg3jkFyZ",
+      "pool_name": "Solana Cash",
+      "sells_24h": 1378,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "HBFXQ147s9VN62DmUvfWAkRApTPzaR8saHcCVCgrpump",
-      "url": "https://dexscreener.com/solana/3pPt2n33W9Q7D4rMX5ujEAGFYhBycrwsxdwekPoeiL3b",
-      "volume_24h_usd": 239560
-    },
-    {
-      "buys_24h": 186,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 26616,
-      "network": "solana",
-      "pool_address": "sTMrhQFWw7A1SavMz5KbeXT2creZ4yevAYiCf5PD5TM",
-      "pool_age_hours": 0.38,
-      "pool_key": "solana:sTMrhQFWw7A1SavMz5KbeXT2creZ4yevAYiCf5PD5TM",
-      "pool_name": "Bawsaq",
-      "sells_24h": 130,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "7dzdHo9DKx2dqnXBVXRyMUJUETQhfwFoV4NwcgfVpump",
-      "url": "https://dexscreener.com/solana/sTMrhQFWw7A1SavMz5KbeXT2creZ4yevAYiCf5PD5TM",
-      "volume_24h_usd": 13181
+      "token_address": "FuURNNJKHYwENbbiJ7ENLhgogPGh87w9ggrArgDtSCH",
+      "url": "https://dexscreener.com/solana/DtNckbWaxAQ3PgK9HP3yVGmTYjDr8DS1mScjeg3jkFyZ",
+      "volume_24h_usd": 116142
     }
   ],
   "lookup_errors": 0,
@@ -57,5 +40,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-13T18:45:04.305141+00:00"
+  "updated_utc": "2026-11-13T23:56:16.580309+00:00"
 }
