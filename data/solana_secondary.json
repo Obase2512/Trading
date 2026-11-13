@@ -1,55 +1,21 @@
 {
   "leads": [
     {
-      "buys_24h": 12011,
+      "buys_24h": 721,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 78882,
+      "liquidity_usd": 31587,
       "network": "solana",
-      "pool_address": "HgQn2RWKzKo93FfnQcag2bg4BGsGuVSes2PQS1JqGcxQ",
-      "pool_age_hours": 1.1,
-      "pool_key": "solana:HgQn2RWKzKo93FfnQcag2bg4BGsGuVSes2PQS1JqGcxQ",
-      "pool_name": "A Micro Dick",
-      "sells_24h": 6825,
+      "pool_address": "91J8WtxYDWAVc6iJNFQu9igg4JBY49wPP8S2XZ3UfPXy",
+      "pool_age_hours": 0.27,
+      "pool_key": "solana:91J8WtxYDWAVc6iJNFQu9igg4JBY49wPP8S2XZ3UfPXy",
+      "pool_name": "FASTMOON",
+      "sells_24h": 402,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "H2SQUiRy8bvAv2yARwajptdLKi9BTYDoWLvu5cbpump",
-      "url": "https://dexscreener.com/solana/HgQn2RWKzKo93FfnQcag2bg4BGsGuVSes2PQS1JqGcxQ",
-      "volume_24h_usd": 580678
-    },
-    {
-      "buys_24h": 2456,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 23239,
-      "network": "solana",
-      "pool_address": "8yFEDsaximUYi3keEhj9kzW7nKXH3Z82gSJguKWTtgFB",
-      "pool_age_hours": 0.32,
-      "pool_key": "solana:8yFEDsaximUYi3keEhj9kzW7nKXH3Z82gSJguKWTtgFB",
-      "pool_name": "Jensen Swan",
-      "sells_24h": 1460,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "EMNsQjn55DFugZ13nFja49CVGJv9r3qPyehqRVFqpump",
-      "url": "https://dexscreener.com/solana/8yFEDsaximUYi3keEhj9kzW7nKXH3Z82gSJguKWTtgFB",
-      "volume_24h_usd": 229185
-    },
-    {
-      "buys_24h": 2001,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 17875,
-      "network": "solana",
-      "pool_address": "Fw5UBZ3VgzcRw9MW4Kso3ASG1FRkzQmnAL8qRCrYpAfo",
-      "pool_age_hours": 22.19,
-      "pool_key": "solana:Fw5UBZ3VgzcRw9MW4Kso3ASG1FRkzQmnAL8qRCrYpAfo",
-      "pool_name": "Oddment",
-      "sells_24h": 1600,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "9azVa2sxrvM1meRA2ixEyyYNcYMoYQYgjtjmFczUpump",
-      "url": "https://dexscreener.com/solana/Fw5UBZ3VgzcRw9MW4Kso3ASG1FRkzQmnAL8qRCrYpAfo",
-      "volume_24h_usd": 178267
+      "token_address": "2QCcwbZL7YgovUqvXmxoKJR8AZoHeGMtt4vj2YGSpump",
+      "url": "https://dexscreener.com/solana/91J8WtxYDWAVc6iJNFQu9igg4JBY49wPP8S2XZ3UfPXy",
+      "volume_24h_usd": 98071
     }
   ],
   "lookup_errors": 0,
@@ -57,5 +23,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-13T03:37:43.606642+00:00"
+  "updated_utc": "2026-11-13T11:36:51.871083+00:00"
 }
