@@ -1,55 +1,21 @@
 {
   "leads": [
     {
-      "buys_24h": 9217,
+      "buys_24h": 16618,
       "eligible_for_buy_alert": false,
-      "liquidity_usd": 58206,
+      "liquidity_usd": 28574,
       "network": "solana",
-      "pool_address": "BivxoZCePwrkUKmngBd5QxNwXtGJjLpHhb6JXgaVBmsY",
-      "pool_age_hours": 0.76,
-      "pool_key": "solana:BivxoZCePwrkUKmngBd5QxNwXtGJjLpHhb6JXgaVBmsY",
-      "pool_name": "GTA Dollars",
-      "sells_24h": 6608,
+      "pool_address": "FMJbNP2T4DtMc4vxkzgz2ZigCrqyfXNKaFhkVfKTYQHk",
+      "pool_age_hours": 5.78,
+      "pool_key": "solana:FMJbNP2T4DtMc4vxkzgz2ZigCrqyfXNKaFhkVfKTYQHk",
+      "pool_name": "Ah shit, here we go again.",
+      "sells_24h": 11239,
       "source": "DEX Screener latest token profiles + token-pairs API",
       "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
       "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "6Nh9cmDoQvd2FvjNm44VmTwbyiKtxgmM7SCuhREhpump",
-      "url": "https://dexscreener.com/solana/BivxoZCePwrkUKmngBd5QxNwXtGJjLpHhb6JXgaVBmsY",
-      "volume_24h_usd": 709998
-    },
-    {
-      "buys_24h": 7254,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 24914,
-      "network": "solana",
-      "pool_address": "8ZYFaK1ZoKurD5quoyptmWZZTX4osv9mYSSLJAo3JYAF",
-      "pool_age_hours": 16.71,
-      "pool_key": "solana:8ZYFaK1ZoKurD5quoyptmWZZTX4osv9mYSSLJAo3JYAF",
-      "pool_name": "Grand Theft Auto VI",
-      "sells_24h": 4974,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "Gta6uoekEj831ppDPD4EiX3Xj9tW8SxR5rzCsF7cLeEk",
-      "url": "https://dexscreener.com/solana/8ZYFaK1ZoKurD5quoyptmWZZTX4osv9mYSSLJAo3JYAF",
-      "volume_24h_usd": 383553
-    },
-    {
-      "buys_24h": 1477,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 21538,
-      "network": "solana",
-      "pool_address": "3BxamfbAR9bZW4xqh3Y6zcmAMY7rEtijv5Y8wS96pa7g",
-      "pool_age_hours": 1.25,
-      "pool_key": "solana:3BxamfbAR9bZW4xqh3Y6zcmAMY7rEtijv5Y8wS96pa7g",
-      "pool_name": "DacityCoin",
-      "sells_24h": 958,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "22hXYVLhjRxFr6CXdhB8uWqXJkJKMKr6UQQSMueXpump",
-      "url": "https://dexscreener.com/solana/3BxamfbAR9bZW4xqh3Y6zcmAMY7rEtijv5Y8wS96pa7g",
-      "volume_24h_usd": 152911
+      "token_address": "6sZUjgnHTdezsZoMdbTcxsi58bXqnsz6mkj49Wgxpump",
+      "url": "https://dexscreener.com/solana/FMJbNP2T4DtMc4vxkzgz2ZigCrqyfXNKaFhkVfKTYQHk",
+      "volume_24h_usd": 1301503
     }
   ],
   "lookup_errors": 0,
@@ -57,5 +23,5 @@
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-14T12:24:08.997687+00:00"
+  "updated_utc": "2026-11-14T18:23:25.956838+00:00"
 }
