@@ -12,9 +12,9 @@
       "execution_guaranteed": false,
       "provider_buy": "Jupiter Swap V2 indicative",
       "provider_sell": "Jupiter Swap V2 indicative",
-      "quoted_roundtrip_loss_pct": 0.02,
+      "quoted_roundtrip_loss_pct": 0.05,
       "status": "ok"
     }
   },
-  "updated_utc": "2026-11-13T23:56:33.121394+00:00"
+  "updated_utc": "2026-11-14T05:25:01.593033+00:00"
 }
