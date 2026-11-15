@@ -1,44 +1,9 @@
 {
-  "leads": [
-    {
-      "buys_24h": 4743,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 47233,
-      "network": "solana",
-      "pool_address": "2FivK3QNhBAGz2pK9LdfHWFJvSTnzjMpCrL469VZhUyf",
-      "pool_age_hours": 0.3,
-      "pool_key": "solana:2FivK3QNhBAGz2pK9LdfHWFJvSTnzjMpCrL469VZhUyf",
-      "pool_name": "WANTED",
-      "sells_24h": 1943,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "CiMyaPC9icicJxkFqvqpgL2YT2FjEQmGx1YVdG78pump",
-      "url": "https://dexscreener.com/solana/2FivK3QNhBAGz2pK9LdfHWFJvSTnzjMpCrL469VZhUyf",
-      "volume_24h_usd": 223026
-    },
-    {
-      "buys_24h": 8430,
-      "eligible_for_buy_alert": false,
-      "liquidity_usd": 21453,
-      "network": "solana",
-      "pool_address": "CRgQVMHnxrbmXGtUF2Gi1j8u5tjXStKpq5Gf9j2n578C",
-      "pool_age_hours": 0.91,
-      "pool_key": "solana:CRgQVMHnxrbmXGtUF2Gi1j8u5tjXStKpq5Gf9j2n578C",
-      "pool_name": "Dacity Cat",
-      "sells_24h": 3088,
-      "source": "DEX Screener latest token profiles + token-pairs API",
-      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
-      "status": "RESEARCH_ONLY_UNVERIFIED",
-      "token_address": "ErtyXjRNeCkcKsrJJ8NwGCVQAoYQoVPnzs6Fr2Jmpump",
-      "url": "https://dexscreener.com/solana/CRgQVMHnxrbmXGtUF2Gi1j8u5tjXStKpq5Gf9j2n578C",
-      "volume_24h_usd": 199836
-    }
-  ],
+  "leads": [],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-15T02:09:48.593443+00:00"
+  "updated_utc": "2026-11-15T09:29:30.382670+00:00"
 }
