@@ -9,8 +9,8 @@ on:
         description: Send a one-time Telegram connectivity test (manual only)
         type: boolean
         default: false
-  schedule:
-    - cron: '7,17,27,37,47,57 * * * *'  # ~10m target; GH Actions may delay/skip
+  # Automatic scans are intentionally paused after six losing paper trades.
+  # Manual research runs remain available through workflow_dispatch; CI through pull_request.
 
 permissions:
   contents: write
