@@ -1,9 +1,27 @@
 {
-  "leads": [],
+  "leads": [
+    {
+      "buys_24h": 4085,
+      "eligible_for_buy_alert": false,
+      "liquidity_usd": 20820,
+      "network": "solana",
+      "pool_address": "H3WbG13D6pKXWC19WHnUDncDnLAcQVT3gUGyuVkoi6h6",
+      "pool_age_hours": 0.34,
+      "pool_key": "solana:H3WbG13D6pKXWC19WHnUDncDnLAcQVT3gUGyuVkoi6h6",
+      "pool_name": "AICoin",
+      "sells_24h": 2081,
+      "source": "DEX Screener latest token profiles + token-pairs API",
+      "source_caveat": "Profiles may be promoted; pool age is not token age. No independent contract review or future sell quote.",
+      "status": "RESEARCH_ONLY_UNVERIFIED",
+      "token_address": "7Xkjbrr3s9u1JBaZyj66tTvwaHPSnFDAWon1qYNypump",
+      "url": "https://dexscreener.com/solana/H3WbG13D6pKXWC19WHnUDncDnLAcQVT3gUGyuVkoi6h6",
+      "volume_24h_usd": 166936
+    }
+  ],
   "lookup_errors": 0,
   "profile_tokens_inspected": 8,
   "source": "DEX Screener recently profiled Solana tokens; incomplete/promoted feed",
   "successful_pair_lookups": 8,
   "trading_eligible": false,
-  "updated_utc": "2026-11-15T09:29:30.382670+00:00"
+  "updated_utc": "2026-11-15T16:33:24.478454+00:00"
 }
